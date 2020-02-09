@@ -43,5 +43,6 @@ function stopVideo() {
 
 setInterval(function () {
   if (ytPlayerReady)
+    console.log(player);
     document.getElementById("fraction").innerText = player.getVideoLoadedFraction()
 },  500)
