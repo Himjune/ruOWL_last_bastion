@@ -1,48 +1,29 @@
-// 2. This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
-
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
-var player;
-var ytPlayerReady = false;
-
+var yt_player;
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    videoId: 'M7lc1UVf-VE',
-    playerVars: { 'autoplay': 1, 'controls': 0 },
+  yt_player = new YT.Player('ytPlayer', {
+    height: '360',
+    width: '640',
+    videoId: 'eYN-IgtHo-c',
     events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
+      'onReady': onPlayerReady
     }
   });
-  ytPlayerReady = true;
+  console.log(yt_player);
 }
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
   event.target.playVideo();
 }
-
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
-var done = false;
-function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo, 6000);
-    done = true;
-  }
-}
-function stopVideo() {
-  player.stopVideo();
+function seekVideo() {
+  yt_player.seekTo(yt_player.getDuration()-30, true);
 }
 
 setInterval(function () {
-  if (ytPlayerReady)
-    console.log(player);
-    document.getElementById("fraction").innerText = player.getVideoLoadedFraction()
-},  500)
+  document.getElementById("fraction").innerText = yt_player.getVideoLoadedFraction();
+  document.getElementById("ctime").innerText = yt_player.getCurrentTime();
+  document.getElementById("gdur").innerText = yt_player.getDuration();
+
+}, 500)

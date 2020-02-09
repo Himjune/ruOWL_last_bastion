@@ -22,26 +22,29 @@
       display: block;
     }
   </style>
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+  <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+  <script src= "https://www.youtube.com/iframe_api"></script>
 </head>
 
 <body>
-  <iframe src="https://player.twitch.tv/?channel=outbreak" frameborder="0" allowfullscreen="true" scrolling="no"
-    height="378" width="620">
-  </iframe>
-  <a href="https://www.twitch.tv/outbreak?tt_content=text_link&tt_medium=live_embed"
-    style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">
-    Смотрите прямую трансляцию outbreak на www.twitch.tv
-  </a>
+  <div id="twPlayer"></div>
+  <div>
+    vol:<span id="twVol">NULL</span><br>
+    cur:<span id="twCur">NULL</span><br>
+    dur:<span id="twDur">NULL</span><br>
+  </div>
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/eYN-IgtHo-c?controls=1&autoplay=1" frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-  </iframe>
+  <div id="ytPlayer"></div>
+  <a href="javascript:seekVideo()">seek</a>
   <div>
     buffer:<span id="fraction">NULL</span><br>
-
+    ctime:<span id="ctime">NULL</span><br>
+    gdur:<span id="gdur">NULL</span><br>
   </div>
 
   <script src="yt_scripts.js"></script>
+  <script src="tw_scripts.js"></script>
 </body>
 
 </html>
