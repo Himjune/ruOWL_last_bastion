@@ -1,7 +1,7 @@
 var embed = new Twitch.Embed("twPlayer", {
   width: 854,
   height: 480,
-  channel: "fitzyhere",
+  channel: "outbreak",
   layout: "video-with-chat",
   autoplay: false
 });
