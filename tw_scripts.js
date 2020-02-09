@@ -1,6 +1,6 @@
 var embed = new Twitch.Embed("twPlayer", {
-  width: 854,
-  height: 480,
+  width: 1140,
+  height: 640,
   channel: "outbreak",
   layout: "video-with-chat",
   autoplay: false
