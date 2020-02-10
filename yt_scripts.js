@@ -48,8 +48,8 @@ setInterval(function () {
 
   if (diff > 2) yt_player.setPlaybackRate(0.25);
   else if (diff > 0.5) yt_player.setPlaybackRate(0.75);
-  else if (diff < -0.5) yt_player.setPlaybackRate(1.25);
   else if (diff < -2) yt_player.setPlaybackRate(1.75);
+  else if (diff < -0.5) yt_player.setPlaybackRate(1.25);
   else yt_player.setPlaybackRate(1);
 
 }, 1000);
