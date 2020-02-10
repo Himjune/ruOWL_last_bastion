@@ -40,7 +40,7 @@ setInterval(function () {
     cur_end_time = cur_end_time + 0.5;
   }
 
-  document.getElementById("tar").innerText = (cur_end_time - fixed_delay);
+  document.getElementById("ctar").innerText = (cur_end_time - fixed_delay);
   let diff = yt_player.getCurrentTime() - cur_end_time + fixed_delay;
 
   if (diff > 2) yt_player.setPlaybackRate(0.5);
