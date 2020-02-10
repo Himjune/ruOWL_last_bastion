@@ -32,24 +32,23 @@ setInterval(function () {
   document.getElementById("gdur").innerText = yt_player.getDuration();
   
 
-  if (yt_player.getCurrentTime()>0 && 
-      cur_end_time<0 ) {
+  if ((yt_player.getCurrentTime()>0 && last_fixed_end_time<0) || (yt_player.getCurrentTime()<yt_player.getDuration()*0.75)) {
     last_fixed_end_time = yt_player.getCurrentTime();
     cur_end_time = last_fixed_end_time;
   } else {
-    cur_end_time = cur_end_time + 0.5;
+    cur_end_time = cur_end_time + 1;
   }
 
   document.getElementById("ctar").innerText = (cur_end_time - fixed_delay);
   let diff = yt_player.getCurrentTime() - cur_end_time + fixed_delay;
 
-  if (diff > 2) yt_player.setPlaybackRate(0.5);
+  if (diff > 2) yt_player.setPlaybackRate(0.25);
   else if (diff > 0.5) yt_player.setPlaybackRate(0.75);
   else if (diff < -0.5) yt_player.setPlaybackRate(1.25);
-  else if (diff < -2) yt_player.setPlaybackRate(1.5);
+  else if (diff < -2) yt_player.setPlaybackRate(1.75);
   else yt_player.setPlaybackRate(1);
 
-}, 500);
+}, 1000);
 
 
 function seekVideo() {
