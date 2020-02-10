@@ -23,16 +23,20 @@ var last_fixed_end_time = -1.0;
 var cur_end_time = -1.0;
 var fixed_delay = 9.0;
 setInterval(function () {
-  
+
   document.getElementById("fraction").innerText = last_fixed_end_time;
   document.getElementById("ctime").innerText = yt_player.getCurrentTime();
   document.getElementById("cend").innerText = cur_end_time;
   document.getElementById("del").innerText = fixed_delay;
   document.getElementById("cspe").innerText = yt_player.getPlaybackRate();
   document.getElementById("gdur").innerText = yt_player.getDuration();
-  
 
-  if ((yt_player.getCurrentTime()>0 && last_fixed_end_time<0) || (yt_player.getCurrentTime()<yt_player.getDuration()*0.75)) {
+
+  if (yt_player.getCurrentTime() > 0 && last_fixed_end_time < 0) {
+    last_fixed_end_time = yt_player.getCurrentTime();
+    cur_end_time = last_fixed_end_time;
+  } else if (yt_player.getCurrentTime() < yt_player.getDuration() * 0.75) {
+    yt_player.seekTo(yt_player.getDuration(), false);
     last_fixed_end_time = yt_player.getCurrentTime();
     cur_end_time = last_fixed_end_time;
   } else {
