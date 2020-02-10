@@ -37,7 +37,7 @@ setInterval(function () {
     last_fixed_end_time = yt_player.getCurrentTime();
     cur_end_time = last_fixed_end_time;
   } else {
-    cur_end_time = cur_end_time + 1;
+    cur_end_time = cur_end_time + 0.5;
   }
 
   document.getElementById("tar").innerText = (cur_end_time - fixed_delay);
@@ -49,7 +49,7 @@ setInterval(function () {
   else if (diff < -2) yt_player.setPlaybackRate(1.5);
   else yt_player.setPlaybackRate(1);
 
-}, 1000);
+}, 500);
 
 
 function seekVideo() {
