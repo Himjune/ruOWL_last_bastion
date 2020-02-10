@@ -36,11 +36,18 @@
   </div>
 
   <div id="ytPlayer"></div>
-  <a href="javascript:seekVideo()">seek</a>
   <div>
-    buffer:<span id="fraction">NULL</span><br>
+    <input id="delayInput" value="9.0">
+    <a href="javascript:seekVideo()">seek</a>
+    <a href="javascript:dropVideo()">drop</a>
+  </div>
+  <div>
+    last_fixed_end_time:<span id="fraction">NULL</span><br>
     ctime:<span id="ctime">NULL</span><br>
-    gdur:<span id="gdur">NULL</span><br>
+    cur_end_time:<span id="cend">NULL</span><br>
+    speed:<span id="cspe">NULL</span><br>
+    fixed_delay:<span id="del">NULL</span><br>
+    ddur:<span id="gdur">NULL</span><br>
   </div>
 
   <script src="yt_scripts.js"></script>
