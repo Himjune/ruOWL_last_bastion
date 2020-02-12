@@ -2,15 +2,24 @@
 //    after the API code downloads.
 var yt_player;
 function onYouTubeIframeAPIReady() {
+  let videoId = util_get_query_param('yt');
+
+  if (videoId === '') {
+    videoId = get_current_yt_ow_channel();
+  }
+
+  if (videoId === '') {
+    videoId = 'JOZ636tLVzQ';
+  }
+
   yt_player = new YT.Player('ytPlayer', {
     height: '360',
     width: '640',
-    videoId: 'JOZ636tLVzQ',
+    videoId: videoId,
     events: {
       'onReady': onPlayerReady
     }
   });
-  console.log(yt_player);
 }
 
 // 4. The API will call this function when the video player is ready.
@@ -31,7 +40,7 @@ setInterval(function () {
   document.getElementById("cspe").innerText = yt_player.getPlaybackRate();
   document.getElementById("gdur").innerText = yt_player.getDuration();
 
-
+/*
   if (yt_player.getCurrentTime() > 0 && last_fixed_end_time < 0) {
     last_fixed_end_time = yt_player.getCurrentTime();
     cur_end_time = last_fixed_end_time;
@@ -51,7 +60,7 @@ setInterval(function () {
   else if (diff < -2) yt_player.setPlaybackRate(1.75);
   else if (diff < -0.3) yt_player.setPlaybackRate(1.25);
   else yt_player.setPlaybackRate(1);
-
+*/
 }, 1000);
 
 
