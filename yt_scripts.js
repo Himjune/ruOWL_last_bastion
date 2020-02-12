@@ -9,7 +9,7 @@ function onYouTubeIframeAPIReady() {
   }
 
   if (videoId === '') {
-    videoId = 'JOZ636tLVzQ';
+    videoId = '07Z7jHgmsZE';
   }
 
   yt_player = new YT.Player('ytPlayer', {
