@@ -15,5 +15,4 @@ setInterval(() => {
   document.getElementById("twVol").innerText = g_player.getVolume();
   document.getElementById("twCur").innerText = g_player.getCurrentTime();
   document.getElementById("twDur").innerText = g_player.getDuration();
-  console.log(g_player.getPlaybackStats());
 }, 500);
