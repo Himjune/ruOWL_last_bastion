@@ -23,7 +23,7 @@ function get_current_yt_ow_channel() {
   &eventType=live&type=video&key=AIzaSyD3p3q_0Rv1Z1zF7WwJ0QCToYwMbnYkJQ0`, false);
   xhr.send();
   if (xhr.status != 200) {
-    alert(xhr.status + ': ' + xhr.statusText);
+    console.log(xhr.status + ': ' + xhr.statusText);
     return ''
   } else {
     let res = JSON.parse(xhr.responseText);
