@@ -1,3 +1,6 @@
+body {
+  background-color: black;
+}
 @media (orientation: landscape) {
   .main-container {
     overflow: hidden;
@@ -41,16 +44,14 @@
 
 @media (orientation: portrait) {
   .main-container {
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: auto;
-    width: 100vw;
-    height: 100vh;
   }
   .sub-stream-container {
     position: static;
     z-index: 10;
-    width: 100%;
-    height: 30%;
+    width: 100vw;
+    height: 30vh;
   }
   .sub-stream-container iframe {
     width: 100%;
@@ -58,8 +59,8 @@
   }
   
   .main-stream-container {
-    width: 100%;
-    height: 30%;
+    width: 100vw;
+    height: 30vh;
   }
   .main-stream-container iframe {
     z-index: 0;
@@ -70,8 +71,8 @@
   .sync-stream-container {
     position: absolute;
     top: 10%;
-    width: 100%;
-    height: 30%;
+    width: 100vw;
+    height: 56vh;
   }
   .sync-stream-container iframe {
     z-index: 0;
@@ -80,7 +81,7 @@
   }
 
   .chat-container {
+    width: 100vw;
     height: 100vh;
-    width: 100%;
   }
 }
