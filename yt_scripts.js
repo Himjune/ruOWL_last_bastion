@@ -5,7 +5,7 @@ function onYouTubeIframeAPIReady() {
   let videoId = util_get_query_param('yt');
 
   if (videoId === '') {
-    videoId = get_current_yt_ow_channel();
+    //videoId = get_current_yt_ow_channel();
   }
 
   if (videoId === '') {
