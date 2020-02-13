@@ -42,25 +42,34 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <div class="btn-group ml-4" role="group" aria-label="Схемы расположения">
-          <button type="button" class="btn btn-dark p-0 pt-1 px-2" title="Главный - YouTube" onclick="to_yt_main_scheme()">
-            <span class="iconify position-absolute" style="top: 22%; padding: 0.08rem; background-color: black; z-index: 1;"
-             data-icon="logos:twitch" data-inline="false" data-width="16px" data-height="16px">
+          <button type="button" class="btn btn-dark p-0 pt-1 px-2" title="Главный - YouTube"
+            onclick="to_yt_main_scheme()">
+            <span class="iconify position-absolute"
+              style="top: 22%; padding: 0.08rem; background-color: black; z-index: 1;" data-icon="logos:twitch"
+              data-inline="false" data-width="16px" data-height="16px">
             </span>
-            <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px" data-height="28px"></span>
+            <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px"
+              data-height="28px"></span>
           </button>
 
-          <button type="button" class="btn btn-dark p-0 pt-1 px-2" title="Главный - Twitch" onclick="to_tw_main_scheme()">
-            <span class="iconify position-absolute" style="top: 22%; padding: 0.08rem; background-color: black; z-index: 1;"
-             data-icon="logos:youtube" data-inline="false" data-width="16px" data-height="16px">
+          <button type="button" class="btn btn-dark p-0 pt-1 px-2" title="Главный - Twitch"
+            onclick="to_tw_main_scheme()">
+            <span class="iconify position-absolute"
+              style="top: 22%; padding: 0.08rem; background-color: black; z-index: 1;" data-icon="logos:youtube"
+              data-inline="false" data-width="16px" data-height="16px">
             </span>
-            <span class="iconify" data-icon="logos:twitch" data-inline="false" data-width="40px" data-height="28px"></span>
+            <span class="iconify" data-icon="logos:twitch" data-inline="false" data-width="40px"
+              data-height="28px"></span>
           </button>
 
-          <button type="button" class="btn btn-dark p-0 pt-1 px-2 overflow-hidden" title="Синхро-режим" onclick="to_sync_scheme()">
-            <span class="iconify position-absolute" style="top: 40%; overflow: hidden; height: 50%; background-color: black; z-index: 1;"
-             data-icon="logos:twitch" data-inline="false" data-width="40px" data-height="28px">
+          <button type="button" class="btn btn-dark p-0 pt-1 px-2 overflow-hidden" title="Синхро-режим"
+            onclick="to_sync_scheme()">
+            <span class="iconify position-absolute"
+              style="top: 40%; overflow: hidden; height: 50%; background-color: black; z-index: 1;"
+              data-icon="logos:twitch" data-inline="false" data-width="40px" data-height="28px">
             </span>
-            <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px" data-height="28px"></span>
+            <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px"
+              data-height="28px"></span>
           </button>
         </div>
 
@@ -89,7 +98,8 @@
         </li>
       </ul>
       <button type="button" class="btn btn-dark pt-2 pb-0">
-        <span class="iconify" data-icon="ion:chatbox-ellipses-sharp" data-inline="false" data-width="28px" data-height="28px"></span>
+        <span class="iconify" data-icon="ion:chatbox-ellipses-sharp" data-inline="false" data-width="28px"
+          data-height="28px"></span>
       </button>
     </div>
   </nav>
@@ -101,13 +111,9 @@
     <div class="sub-stream-container" id="twPlayer"></div>
   </div>
 
-  <iframe frameborder="0"
-  scrolling="no"
-  id="chat_embed"
-  src="https://www.twitch.tv/embed/outbreak/chat"
-  height="500"
-  width="350">
-</iframe>
+  <iframe frameborder="0" scrolling="no" id="chat_embed" src="https://www.twitch.tv/embed/outbreak/chat?darkpopout" height="1080"
+    width="720">
+  </iframe>
 
   <div class="d-none">
     vol:<span id="twVol">NULL</span><br>
