@@ -1,8 +1,11 @@
+get
+
 var embed = new Twitch.Embed("twPlayer", {
   width: 600,
   height: 400,
-  channel: "outbreak",
-  layout: "video",
+  video: "548294329",
+  layout: "video-with-chat",
+  theme: "dark",
   autoplay: false
 });
 var g_player;
