@@ -1,5 +1,3 @@
-get
-
 var embed = new Twitch.Embed("twPlayer", {
   width: 600,
   height: 400,
