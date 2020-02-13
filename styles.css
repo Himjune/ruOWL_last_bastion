@@ -4,18 +4,21 @@
   height: 100vh;
 }
 
-.tw-container {
+.sub-stream-container {
   z-index: 10;
   top: 30%;
-  width: 30%;
+  width: 28%;
   height: 30%;
 }
-.tw-container iframe {
+.sub-stream-container iframe {
   width: 100%;
   height: 100%;
 }
-
-.yt-container {
+.main-stream-container {
+  width: 100%;
+  height: 100%;
+}
+.main-stream-container iframe {
   z-index: 0;
   width: 100%;
   height: 100%;
