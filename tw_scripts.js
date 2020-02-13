@@ -1,11 +1,13 @@
-var embed = new Twitch.Embed("twPlayer", {
+let props = {
   width: 600,
   height: 400,
   video: "548294329",
-  layout: "video-with-chat",
+  layout: "video",
   theme: "dark",
   autoplay: false
-});
+}
+
+var embed = new Twitch.Embed("twPlayer", props);
 var g_player;
 embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
   g_player = embed.getPlayer();
