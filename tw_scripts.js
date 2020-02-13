@@ -8,7 +8,7 @@ var embed = new Twitch.Embed("twPlayer", {
 var g_player;
 embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
   g_player = embed.getPlayer();
-  player.play();
+  g_player.play();
 });
 
 setInterval(() => {

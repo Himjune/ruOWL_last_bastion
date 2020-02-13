@@ -69,7 +69,7 @@
               data-icon="cil:chevron-double-left" data-inline="false"></span></button>
           <button type="button" class="btn btn-dark px-1 pt-2" title="-0.1c"><span class="iconify"
               data-icon="cil:chevron-left" data-inline="false"></span></button>
-          <button type="button" class="btn btn-dark px-2 pb-2" disabled>0</button>
+          <button id="delayValBtn" type="button" class="btn btn-dark px-2 pb-2" disabled>0</button>
           <button type="button" class="btn btn-dark px-1 pt-2" title="+0.1c"><span class="iconify"
               data-icon="cil:chevron-right" data-inline="false"></span></button>
           <button type="button" class="btn btn-dark px-1 pt-2" title="+1.0c"><span class="iconify"
@@ -88,12 +88,13 @@
           </div>
         </li>
       </ul>
+      <button type="button" class="btn btn-dark">Чат</button>
     </div>
   </nav>
 
   <div class="position-relative pt-5 main-container">
-    <div class="main-stream-container" id="twPlayer"></div>
-    <div class="sub-stream-container" id="ytPlayerContainer">
+    <div class="sub-stream-container" id="twPlayer"></div>
+    <div class="main-stream-container" id="ytPlayerContainer">
       <div class="yt-container" id="ytPlayer"></div>
     </div>
   </div>
