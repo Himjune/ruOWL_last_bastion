@@ -9,6 +9,29 @@ body {
   background-color: black !important;
   overflow-x: hidden;
 }
+
+.main-screen-icon {
+  background-color: white;
+  border-radius: 0.2rem;
+}
+.sub-screen-icon {
+  top: 22%;
+  padding: 0.08rem;
+  background-color: white;
+  z-index: 1;
+  border: 2px solid gray;
+  border-radius: 0.2rem;
+}
+.sync-screen-icon {
+  top: 40%;
+  overflow: hidden;
+  height: 50%;
+  background-color:
+  white;
+  z-index: 1;
+  border-radius: 0.2rem;
+}
+
 @media (orientation: landscape) {
   .main-container {
     background-color: black;
@@ -88,8 +111,12 @@ body {
   #schemeBtns {
     position: fixed;
     left: 0;
-    top: 0;
+    top: 30%;
     z-index: 10000;
+  }
+  .sub-stream-container #schemeBtns {
+    position: absolute;
+    top: 0;
   }
 
   #shiftBtns {
@@ -162,10 +189,13 @@ body {
 
 
   #schemeBtns {
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: 0;
+    top: 30vh;
     z-index: 10000;
+  }
+  .sync-stream-container #schemeBtns {
+    top: 10vh;
   }
 
   #shiftBtns {
