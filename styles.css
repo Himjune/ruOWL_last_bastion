@@ -74,10 +74,10 @@ body {
 }
 
 
-@media (min-width: 576px) and (orientation: landscape) { .sub-stream-container {width: 80px; height: 45px;} }
-@media (min-width: 768px) and (orientation: landscape) { .sub-stream-container {width: 160px; height: 90px;} }
-@media (min-width: 992px) and (orientation: landscape) { .sub-stream-container {width: 320px; height: 135px;} }
-@media (min-width: 1200px) and (orientation: landscape) { .sub-stream-container {width: 288px; height: 162px;} }
+@media (min-width: 576px) and (orientation: landscape) { .sub-stream-container {width: 120px; height: 67px;} }
+@media (min-width: 768px) and (orientation: landscape) { .sub-stream-container {width: 240px; height: 135px;} }
+@media (min-width: 992px) and (orientation: landscape) { .sub-stream-container {width: 480px; height: 202px;} }
+@media (min-width: 1200px) and (orientation: landscape) { .sub-stream-container {width: 432px; height: 243px;} }
 
 @media (orientation: portrait) {
   .main-container {
