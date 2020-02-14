@@ -33,20 +33,46 @@
 
 <body>
   <div class="main-container stream-with-chat" id="streamsContainer">
+    <div id="schemeBtns" class="btn-group" role="group" aria-label="Схемы расположения">
+      <button type="button" class="btn btn-dark p-0 pt-1 px-2" title="Главный - YouTube" onclick="to_yt_main_scheme()">
+        <span class="iconify position-absolute" style="top: 22%; padding: 0.08rem; background-color: black; z-index: 1;"
+          data-icon="logos:twitch" data-inline="false" data-width="16px" data-height="16px">
+        </span>
+        <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px" data-height="28px"></span>
+      </button>
+
+      <button type="button" class="btn btn-dark p-0 pt-1 px-2" title="Главный - Twitch" onclick="to_tw_main_scheme()">
+        <span class="iconify position-absolute" style="top: 22%; padding: 0.08rem; background-color: black; z-index: 1;"
+          data-icon="logos:youtube" data-inline="false" data-width="16px" data-height="16px">
+        </span>
+        <span class="iconify" data-icon="logos:twitch" data-inline="false" data-width="40px" data-height="28px"></span>
+      </button>
+
+      <button type="button" class="btn btn-dark p-0 pt-1 px-2 overflow-hidden" title="Синхро-режим"
+        onclick="to_sync_scheme()">
+        <span class="iconify position-absolute"
+          style="top: 40%; overflow: hidden; height: 50%; background-color: black; z-index: 1;" data-icon="logos:twitch"
+          data-inline="false" data-width="40px" data-height="28px">
+        </span>
+        <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px" data-height="28px"></span>
+      </button>
+    </div>
+
     <div class="main-stream-container" id="ytPlayerContainer">
       <div class="yt-container" id="ytPlayer"></div>
     </div>
     <div class="sub-stream-container" id="twPlayer"></div>
     <div class="sync-mode-placeholder d-none"></div>
 
-    <button id="chatToggleBtn" type="button" class="btn btn-dark pt-lg-1 pb-lg-0 px-lg-1 pt-md-2 pb-md-1 px-md-2 pt-4 pb-3 px-4" onclick="toggle_chat()">
+    <button id="chatToggleBtn" type="button"
+      class="btn btn-dark pt-lg-1 pb-lg-0 px-lg-1 pt-md-2 pb-md-1 px-md-2 pt-4 pb-3 px-4" onclick="toggle_chat()">
       <span class="iconify" data-icon="ion:chatbox-ellipses-sharp" data-inline="false" data-width="20px"
         data-height="20px"></span>
     </button>
   </div>
 
-  <iframe class="chat-container" frameborder="0" scrolling="no" id="chat_embed" src="https://www.twitch.tv/embed/outbreak/chat?darkpopout" height="1440"
-    width="360">
+  <iframe class="chat-container" frameborder="0" scrolling="no" id="chat_embed"
+    src="https://www.twitch.tv/embed/outbreak/chat?darkpopout" height="1440" width="360">
   </iframe>
 
 

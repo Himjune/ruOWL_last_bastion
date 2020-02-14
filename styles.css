@@ -84,6 +84,13 @@ body {
     right: 0.5rem;
     z-index: 20000;
   }
+
+  #schemeBtns {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    z-index: 10000;
+  }
 }
 
 @media (orientation: portrait) {
@@ -143,6 +150,10 @@ body {
     width: 100vw !important;
   }
   #chatToggleBtn {
+    display: none;
+  }
+
+  #schemeBtns {
     display: none;
   }
 }
