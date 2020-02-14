@@ -66,10 +66,19 @@ body {
     right: 0;
   }
   .chat-hidden {
-    display: none;
+    display: block;
+    width: 0px;
   }
   .stream-with-chat {
     width: 75vw !important;
+  }
+
+  #chatToggleBtn {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    z-index: 20000;
   }
 }
 
@@ -134,5 +143,8 @@ body {
   }
   .stream-with-chat {
     width: 100vw !important;
+  }
+  #chatToggleBtn {
+    display: none;
   }
 }
