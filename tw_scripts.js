@@ -1,6 +1,6 @@
 let props = {
-  width: 600,
-  height: 400,
+  width: 320,
+  height: 180,
   video: "548294329",
   layout: "video",
   theme: "dark",
