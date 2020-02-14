@@ -24,3 +24,15 @@ function to_sync_scheme () {
   twCont.className = "sync-stream-container";
   document.getElementsByClassName("sync-mode-placeholder")[0].className = "sync-mode-placeholder";
 }
+
+function toggle_chat() {
+  let chatElem = document.getElementById("chat_embed");
+
+  if (chatElem.className === "chat-container") {
+    chatElem.className = "chat-container chat-hidden";
+    document.getElementById("streamsContainer").className = "main-container";
+  } else {
+    chatElem.className = "chat-container";
+    document.getElementById("streamsContainer").className = "main-container stream-with-chat";
+  }
+}

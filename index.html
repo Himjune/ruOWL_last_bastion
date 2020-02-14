@@ -97,23 +97,24 @@
           </div>
         </li>
       </ul>
-      <button type="button" class="btn btn-dark pt-2 pb-0">
+      <button id="chatToggleBtn" type="button" class="btn btn-dark pt-2 pb-0" onclick="toggle_chat()">
         <span class="iconify" data-icon="ion:chatbox-ellipses-sharp" data-inline="false" data-width="28px"
           data-height="28px"></span>
       </button>
     </div>
   </nav>
 
-  <div class="position-relative pt-5 main-container">
+  <div class="main-container stream-with-chat" id="streamsContainer">
     <div class="main-stream-container" id="ytPlayerContainer">
       <div class="yt-container" id="ytPlayer"></div>
     </div>
     <div class="sub-stream-container" id="twPlayer"></div>
     <div class="sync-mode-placeholder d-none"></div>
-    <iframe class="chat-container" frameborder="0" scrolling="no" id="chat_embed" src="https://www.twitch.tv/embed/outbreak/chat?darkpopout" height="1920"
-      width="360">
-    </iframe>
   </div>
+  
+  <iframe class="chat-container" frameborder="0" scrolling="no" id="chat_embed" src="https://www.twitch.tv/embed/outbreak/chat?darkpopout" height="1440"
+    width="360">
+  </iframe>
 
 
   <div class="d-none">

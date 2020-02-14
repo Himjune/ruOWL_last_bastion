@@ -1,13 +1,24 @@
-body {
+
+html {
   background-color: black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black !important;
+  overflow-x: hidden;
 }
 @media (orientation: landscape) {
   .main-container {
     background-color: black;
     overflow: hidden;
     width: 100vw;
-    height: 100vh;
+    height: 99vh;
+    position: relative;
+    display: inline-block;
   }
+
   .sub-stream-container {
     position: absolute;
     z-index: 10;
@@ -23,6 +34,7 @@ body {
   .main-stream-container {
     width: 100%;
     height: 100%;
+    display: inline-block;
   }
   .main-stream-container iframe {
     z-index: 0;
@@ -44,6 +56,19 @@ body {
     z-index: 0;
     width: 100%;
     height: 100%;
+  }
+
+  .chat-container {
+    width: 20vw;
+    height: 99vh;
+    position: absolute;
+    right: 0;
+  }
+  .chat-hidden {
+    display: none;
+  }
+  .stream-with-chat {
+    width: 80vw !important;
   }
 }
 
@@ -94,7 +119,13 @@ body {
   }
 
   .chat-container {
-    width: 100%;
+    width: 100vw;
     height: 60vh;
+  }
+  .chat-hidden {
+    display: block;
+  }
+  .stream-with-chat {
+    width: 100vw !important;
   }
 }
