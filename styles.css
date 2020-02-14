@@ -88,13 +88,13 @@ body {
   #schemeBtns {
     position: fixed;
     left: 0;
-    top: 30%;
+    top: 0;
     z-index: 10000;
   }
 
   #shiftBtns {
-    position: absolute;
-    bottom: 0.1rem;
+    position: fixed;
+    top: 0.1rem;
     left: 45%;
     z-index: 10000;
   }
@@ -160,13 +160,17 @@ body {
     display: none;
   }
 
+
   #schemeBtns {
-    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10000;
   }
 
   #shiftBtns {
     position: absolute;
-    top: 25vh;
+    top: 0.1rem;
     left: 45%;
     z-index: 10000;
   }
