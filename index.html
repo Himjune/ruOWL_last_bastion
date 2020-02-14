@@ -33,36 +33,50 @@
 
 <body>
   <div class="main-container stream-with-chat" id="streamsContainer">
-    <div id="schemeBtns" class="btn-group" role="group" aria-label="Схемы расположения">
-      <button type="button" class="btn btn-dark p-0 pt-1 px-2" title="Главный - YouTube" onclick="to_yt_main_scheme()">
-        <span class="iconify position-absolute" style="top: 22%; padding: 0.08rem; background-color: black; z-index: 1; border-radius: 0.2rem;"
-          data-icon="logos:twitch" data-inline="false" data-width="16px" data-height="16px">
-        </span>
-        <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px" data-height="28px"></span>
-      </button>
-
-      <button type="button" class="btn btn-dark p-0 pt-1 px-2" title="Главный - Twitch" onclick="to_tw_main_scheme()">
-        <span class="iconify position-absolute" style="top: 22%; padding: 0.08rem; background-color: black; z-index: 1; border-radius: 0.2rem;"
-          data-icon="logos:youtube" data-inline="false" data-width="16px" data-height="16px">
-        </span>
-        <span class="iconify" style="padding: 0.08rem; background-color: white; border-radius: 0.2rem;"
-          data-icon="logos:twitch" data-inline="false" data-width="40px" data-height="28px"></span>
-      </button>
-
-      <button type="button" class="btn btn-dark p-0 pt-1 px-2 overflow-hidden" title="Синхро-режим"
-        onclick="to_sync_scheme()">
-        <span class="iconify position-absolute"
-          style="top: 40%; overflow: hidden; height: 50%; background-color: black; z-index: 1; border-radius: 0.2rem;" data-icon="logos:twitch"
-          data-inline="false" data-width="40px" data-height="28px">
-        </span>
-        <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px" data-height="28px"></span>
-      </button>
-    </div>
-
     <div class="main-stream-container" id="ytPlayerContainer">
       <div class="yt-container" id="ytPlayer"></div>
     </div>
-    <div class="sub-stream-container" id="twPlayer"></div>
+    <div class="sub-stream-container" id="twPlayer">
+      <div id="schemeBtns" class="btn-group" role="group" aria-label="Схемы расположения">
+        <button type="button" class="btn btn-dark p-0 pt-1 px-2" title="Главный - YouTube" onclick="to_yt_main_scheme()">
+          <span class="iconify position-absolute" style="top: 22%; padding: 0.08rem; background-color: black; z-index: 1; border-radius: 0.2rem;"
+            data-icon="logos:twitch" data-inline="false" data-width="16px" data-height="16px">
+          </span>
+          <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px" data-height="28px"></span>
+        </button>
+  
+        <button type="button" class="btn btn-dark p-0 pt-1 px-2" title="Главный - Twitch" onclick="to_tw_main_scheme()">
+          <span class="iconify position-absolute" style="top: 22%; padding: 0.08rem; background-color: black; z-index: 1; border-radius: 0.2rem;"
+            data-icon="logos:youtube" data-inline="false" data-width="16px" data-height="16px">
+          </span>
+          <span class="iconify" style="padding: 0.08rem; background-color: white; border-radius: 0.2rem;"
+            data-icon="logos:twitch" data-inline="false" data-width="40px" data-height="28px"></span>
+        </button>
+  
+        <button type="button" class="btn btn-dark p-0 pt-1 px-2 overflow-hidden" title="Синхро-режим"
+          onclick="to_sync_scheme()">
+          <span class="iconify position-absolute"
+            style="top: 40%; overflow: hidden; height: 50%; background-color: black; z-index: 1; border-radius: 0.2rem;" data-icon="logos:twitch"
+            data-inline="false" data-width="40px" data-height="28px">
+          </span>
+          <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px" data-height="28px"></span>
+        </button>
+      </div>
+
+
+      <div id="shiftBtns" class="btn-group" role="group" aria-label="Настройка задержки">
+        <button type="button" class="btn btn-dark px-1 pt-2" title="-1.0c"><span class="iconify"
+            data-icon="cil:chevron-double-left" data-inline="false"></span></button>
+        <button type="button" class="btn btn-dark px-1 pt-2" title="-0.1c"><span class="iconify"
+            data-icon="cil:chevron-left" data-inline="false"></span></button>
+        <button id="delayValBtn" type="button" class="btn btn-dark px-2 pb-2" disabled>0</button>
+        <button type="button" class="btn btn-dark px-1 pt-2" title="+0.1c"><span class="iconify"
+            data-icon="cil:chevron-right" data-inline="false"></span></button>
+        <button type="button" class="btn btn-dark px-1 pt-2" title="+1.0c"><span class="iconify"
+            data-icon="cil:chevron-double-right" data-inline="false"></span></button>
+      </div>
+
+    </div>
     <div class="sync-mode-placeholder d-none"></div>
 
     <button id="chatToggleBtn" type="button"

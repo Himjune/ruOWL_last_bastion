@@ -86,9 +86,16 @@ body {
   }
 
   #schemeBtns {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 30%;
+    z-index: 10000;
+  }
+
+  #shiftBtns {
+    position: absolute;
+    bottom: 0.1rem;
+    left: 45%;
     z-index: 10000;
   }
 }
@@ -155,5 +162,12 @@ body {
 
   #schemeBtns {
     display: none;
+  }
+
+  #shiftBtns {
+    position: absolute;
+    top: 25vh;
+    left: 45%;
+    z-index: 10000;
   }
 }
