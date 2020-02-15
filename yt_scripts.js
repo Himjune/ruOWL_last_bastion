@@ -18,7 +18,7 @@ function onYouTubeIframeAPIReady() {
   yt_player = new YT.Player('ytPlayer', {
     height: '360',
     width: '640',
-    playerVars: { 'autoplay': 1, 'controls': 0 },
+    playerVars: { 'autoplay': 1, 'controls': 1 },
     videoId: videoId,
     events: {
       'onReady': onPlayerReady,
@@ -47,8 +47,8 @@ function changeDelay(mod) {
 function onPlayerReady(event) {
   event.target.setVolume(25);
   setTimeout(function (){
-    event.target.playVideo()
-  },3000);
+    event.target.playVideo();
+  },5000);
 
   setInterval(function () {
 
