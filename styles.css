@@ -139,13 +139,9 @@ body {
 
   #schemeBtns {
     position: fixed;
-    left: 0;
-    top: 30%;
+    left: 20%;
+    top: 0.1rem;
     z-index: 10000;
-  }
-  .sub-stream-container #schemeBtns {
-    position: absolute;
-    top: 0;
   }
 
   #shiftBtns {
@@ -219,16 +215,13 @@ body {
 
   #schemeBtns {
     position: fixed;
-    left: 0;
-    top: 30vh;
+    left: 20%;
+    top: 0.1rem;
     z-index: 10000;
-  }
-  .sync-stream-container #schemeBtns {
-    top: 10vh;
   }
 
   #shiftBtns {
-    position: absolute;
+    position: fixed;
     top: 0.1rem;
     left: 45%;
     z-index: 10000;
