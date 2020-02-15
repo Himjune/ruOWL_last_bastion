@@ -46,7 +46,9 @@ function changeDelay(mod) {
 
 function onPlayerReady(event) {
   event.target.setVolume(25);
-  setTimeout(function (){event.target.playVideo()},3000);
+  setTimeout(function (){
+    event.target.playVideo()
+  },3000);
 
   setInterval(function () {
 
