@@ -80,7 +80,8 @@ function onPlayerStateChange(event) {
   // OnPlay
   if (event.data == 1) {
     event.target.seekTo(event.target.getDuration(),true);
-    if (yt_player.getPlayerState() != 1) {
+    let state = yt_player.getPlayerState();
+    if (state != 1) {
       event.target.playVideo();
     }
     if (fixed_end_time_ts === '') {
