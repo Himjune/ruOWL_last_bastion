@@ -79,7 +79,6 @@ function onPlayerReady(event) {
 function onPlayerStateChange(event) {
   // OnPlay
   if (event.data == 1) {
-    event.target.seekTo(event.target.getDuration(),true);
     let state = yt_player.getPlayerState();
     if (state != 1) {
       event.target.playVideo();
