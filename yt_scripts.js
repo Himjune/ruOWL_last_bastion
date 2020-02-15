@@ -48,6 +48,7 @@ function onPlayerReady(event) {
   event.target.setVolume(25);
   setTimeout(function (){
     event.target.playVideo();
+    event.target.seekTo(event.target.getDuration(),true);
   },5000);
 
   setInterval(function () {
