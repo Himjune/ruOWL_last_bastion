@@ -17,7 +17,5 @@ embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
   g_player.play();
   player_ready = true;
   g_player.setVolume(1.0);
-  if (g_player.getMuted()) {
-    g_player.setMuted(false);
-  }
+  g_player.setMuted(false);
 });
