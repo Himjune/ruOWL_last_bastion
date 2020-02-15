@@ -99,6 +99,19 @@ body {
   .stream-with-chat {
     width: 75vw !important;
   }
+  @media (min-width: 1500px) and (orientation: landscape) { 
+    .chat-container {
+      width: 20vw;
+    }
+    .chat-hidden {
+      display: block;
+      width: 0px;
+    }
+    .stream-with-chat {
+      width: 80vw !important;
+    }
+  }
+
 
   #chatToggleBtn {
     display: block;
