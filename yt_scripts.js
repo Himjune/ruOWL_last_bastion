@@ -80,6 +80,8 @@ function onPlayerStateChange(event) {
   // OnPlay
   if (event.data == 1) {
     event.target.seekTo(event.target.getDuration(),true);
+    event.target.playVideo();
+    
     if (fixed_end_time_ts === '') {
       fixed_end_time_ts = Date.now();
       fixed_end_time = yt_player.getCurrentTime();
