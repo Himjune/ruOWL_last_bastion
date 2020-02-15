@@ -16,12 +16,8 @@ embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
   g_player = embed.getPlayer();
   g_player.play();
   player_ready = true;
-});
-
-setInterval(() => {
-  if (player_ready) {
-    document.getElementById("twVol").innerText = g_player.getVolume();
-    document.getElementById("twCur").innerText = g_player.getCurrentTime();
-    document.getElementById("twDur").innerText = g_player.getDuration();
+  g_player.setVolume(1.0);
+  if (g_player.getMuted()) {
+    g_player.setMuted(false);
   }
-}, 500);
+});
