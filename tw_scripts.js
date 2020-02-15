@@ -1,7 +1,8 @@
 let props = {
   width: 320,
   height: 180,
-  video: "548294329",
+  //video: "548294329",
+  channel: "himukee",
   layout: "video",
   theme: "dark",
   autoplay: false
