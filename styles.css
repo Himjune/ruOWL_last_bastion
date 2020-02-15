@@ -96,8 +96,22 @@ body {
     display: block;
     width: 0px;
   }
+  #chatToggleBtn {
+    display: block;
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 20000;
+  }
   .stream-with-chat {
     width: 75vw !important;
+  }
+  .stream-with-chat #chatToggleBtn {
+    display: block;
+    position: fixed;
+    top: 0.5rem;
+    left: 75.5vw;
+    z-index: 20000;
   }
   @media (min-width: 1500px) and (orientation: landscape) { 
     .chat-container {
@@ -110,15 +124,13 @@ body {
     .stream-with-chat {
       width: 80vw !important;
     }
-  }
-
-
-  #chatToggleBtn {
-    display: block;
-    position: absolute;
-    top: 40%;
-    right: 0.5rem;
-    z-index: 20000;
+    .stream-with-chat #chatToggleBtn {
+      display: block;
+      position: fixed;
+      top: 0.5rem;
+      left: 80.5vw;
+      z-index: 20000;
+    }
   }
 
   #schemeBtns {
