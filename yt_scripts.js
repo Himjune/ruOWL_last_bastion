@@ -45,7 +45,7 @@ function changeDelay(mod) {
 }
 
 function onPlayerReady(event) {
-  event.target.playVideo();
+  event.target.setVolume(25);
   console.log(yt_player.getCurrentTime());
   setInterval(function () {
 
