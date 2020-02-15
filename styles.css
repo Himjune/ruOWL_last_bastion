@@ -32,6 +32,10 @@ body {
   border-radius: 0.2rem;
 }
 
+#delayValBtn {
+  opacity: 1.0 !important;
+}
+
 @media (orientation: landscape) {
   .main-container {
     background-color: black;
