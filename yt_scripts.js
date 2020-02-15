@@ -46,14 +46,24 @@ function changeDelay(mod) {
 
 function onPlayerReady(event) {
   event.target.setVolume(25);
-  setTimeout(function (){
+  setTimeout(function () {
     event.target.playVideo();
-    event.target.seekTo(event.target.getDuration(),true);
-  },5000);
+    event.target.seekTo(event.target.getDuration(), true);
+  }, 5000);
 
   setInterval(function () {
 
     cur_end_time = (Date.now() - fixed_end_time_ts) / 1000 + fixed_end_time;
+
+    if (fixed_end_time_ts !== '') {
+      if (cur_end_time < yt_player.getCurrentTime()) {
+        fixed_end_time_ts = Date.now();
+        fixed_end_time = yt_player.getCurrentTime();
+        cur_end_time = fixed_end_time;
+        console.log('fix', fixed_end_time);
+      }
+    }
+
     document.getElementById("fet").innerText = fixed_end_time;
     document.getElementById("fetts").innerText = fixed_end_time_ts;
     document.getElementById("cet").innerText = cur_end_time;
@@ -83,19 +93,12 @@ function onPlayerStateChange(event) {
     if (state != 1) {
       event.target.playVideo();
     }
+
     if (fixed_end_time_ts === '') {
       fixed_end_time_ts = Date.now();
       fixed_end_time = yt_player.getCurrentTime();
       cur_end_time = fixed_end_time;
       console.log('fix', fixed_end_time);
-    } else {
-      cur_end_time = Date.now() - fixed_end_time_ts + fixed_end_time;
-      if (cur_end_time < yt_player.getCurrentTime()) {
-        fixed_end_time_ts = Date.now();
-        fixed_end_time = yt_player.getCurrentTime();
-        cur_end_time = fixed_end_time;
-        console.log('fix', fixed_end_time);
-      }
     }
   }
 }
