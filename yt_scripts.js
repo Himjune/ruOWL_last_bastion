@@ -9,8 +9,9 @@ function onYouTubeIframeAPIReady() {
   }
 
   if (videoId === '') {
-    // videoId = '5Tw5xhRsonc'; // news stream
-    videoId = 'mDSy-lfE4Js'; // next owl
+    //videoId = '5Tw5xhRsonc'; // news stream
+    //videoId = 'mDSy-lfE4Js'; // next owl
+    videoId = '07Z7jHgmsZE' // owl highlights
   }
 
   yt_player = new YT.Player('ytPlayer', {
@@ -28,9 +29,18 @@ function onYouTubeIframeAPIReady() {
 // 4. The API will call this function when the video player is ready.
 
 
-var last_fixed_end_time = -1.0;
-var cur_end_time = -1.0;
-var fixed_delay = 9.0;
+var last_fixed_end_time = '';
+var cur_end_time = '';
+var fixed_delay = 0.0;
+
+function changeDelay(mod) {
+  mod = parseFloat(mod);
+  fixed_delay = fixed_delay+mod;
+  if (fixed_delay > 0.0) fixed_delay = 0.0;
+
+  document.getElementById("delayValBtn").innerText = fixed_delay.toFixed(1) + 'с';
+}
+
 function onPlayerReady(event) {
   event.target.playVideo();
   console.log(yt_player.getCurrentTime());
