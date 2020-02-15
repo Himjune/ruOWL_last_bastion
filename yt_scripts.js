@@ -46,8 +46,8 @@ function changeDelay(mod) {
 
 function onPlayerReady(event) {
   event.target.setVolume(25);
-  setTimeout(function (){yt_player.playVideo()},3000);
-  
+  setTimeout(function (){event.target.playVideo()},3000);
+
   setInterval(function () {
 
     cur_end_time = (Date.now() - fixed_end_time_ts) / 1000 + fixed_end_time;
