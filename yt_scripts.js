@@ -9,9 +9,9 @@ function onYouTubeIframeAPIReady() {
   }
 
   if (videoId === '') {
-    //videoId = 'zPm6tpIupq0'; // my test
+    videoId = 'zPm6tpIupq0'; // my test
     //videoId = '5Tw5xhRsonc'; // news stream
-    videoId = 'mDSy-lfE4Js'; // next owl
+    //videoId = 'mDSy-lfE4Js'; // next owl
     //videoId = '07Z7jHgmsZE' // owl highlights
   }
 
