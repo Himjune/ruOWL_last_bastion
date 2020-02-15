@@ -18,8 +18,8 @@ function onYouTubeIframeAPIReady() {
   yt_player = new YT.Player('ytPlayer', {
     height: '360',
     width: '640',
+    playerVars: { 'autoplay': 1, 'controls': 0 },
     videoId: videoId,
-    controls: 0,
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
@@ -46,22 +46,23 @@ function changeDelay(mod) {
 
 function onPlayerReady(event) {
   event.target.setVolume(25);
+  //setTimeout(function (){yt_player.playVideo()})
   console.log(yt_player.getCurrentTime());
   setInterval(function () {
 
-    cur_end_time = (Date.now() - fixed_end_time_ts)/1000 + fixed_end_time;
+    cur_end_time = (Date.now() - fixed_end_time_ts) / 1000 + fixed_end_time;
     document.getElementById("fet").innerText = fixed_end_time;
     document.getElementById("fetts").innerText = fixed_end_time_ts;
     document.getElementById("cet").innerText = cur_end_time;
-    
+
     document.getElementById("ctime").innerText = yt_player.getCurrentTime();
     document.getElementById("del").innerText = fixed_delay;
     document.getElementById("cspe").innerText = yt_player.getPlaybackRate();
     document.getElementById("gdur").innerText = yt_player.getDuration();
 
-    cur_end_time = (Date.now() - fixed_end_time_ts)/1000 + fixed_end_time;
+    cur_end_time = (Date.now() - fixed_end_time_ts) / 1000 + fixed_end_time;
     document.getElementById("ctar").innerText = (cur_end_time + fixed_delay);
-    let diff = cur_end_time+fixed_delay - yt_player.getCurrentTime();
+    let diff = cur_end_time + fixed_delay - yt_player.getCurrentTime();
 
     if (diff > 2) yt_player.setPlaybackRate(2);
     else if (diff > 0.3) yt_player.setPlaybackRate(1.25);
