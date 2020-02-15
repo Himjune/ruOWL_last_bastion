@@ -9,7 +9,8 @@ function onYouTubeIframeAPIReady() {
   }
 
   if (videoId === '') {
-    videoId = '07Z7jHgmsZE';
+    // videoId = '5Tw5xhRsonc'; // news stream
+    videoId = 'mDSy-lfE4Js'; // next owl
   }
 
   yt_player = new YT.Player('ytPlayer', {
@@ -18,7 +19,8 @@ function onYouTubeIframeAPIReady() {
     videoId: videoId,
     controls: 0,
     events: {
-      'onReady': onPlayerReady
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
     }
   });
 }
@@ -31,7 +33,7 @@ var cur_end_time = -1.0;
 var fixed_delay = 9.0;
 function onPlayerReady(event) {
   event.target.playVideo();
-
+  console.log(yt_player.getCurrentTime());
   setInterval(function () {
   
     document.getElementById("fraction").innerText = last_fixed_end_time;
@@ -64,6 +66,13 @@ function onPlayerReady(event) {
   */
   }, 1000);
 }
+
+function onPlayerStateChange(event) {
+  if (event.data == 1) {
+    console.log('onPlay',yt_player.getCurrentTime());
+  }
+}
+
 
 
 function seekVideo() {

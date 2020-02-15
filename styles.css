@@ -33,7 +33,7 @@ body {
 }
 
 #delayValBtn {
-  opacity: 1.0 !important;
+  opacity: 0.9 !important;
 }
 
 @media (orientation: landscape) {
