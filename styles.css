@@ -10,6 +10,59 @@ body {
   overflow-x: hidden;
 }
 
+.help-cross {
+  position: absolute;
+  right: 0.4rem;
+  bottom: 0.1rem;
+  color: gray;
+  z-index: 1;
+}
+.popdown {
+  background-color: gray;
+  color: gray;
+  -webkit-clip-path: polygon(8% 5%, 100% 5%, 100% 100%, 0 100%, 0 5%, 3% 5%, 5% 0);
+  clip-path: polygon(8% 5%, 100% 5%, 100% 100%, 0 100%, 0 5%, 3% 5%, 5% 0);
+  text-align: justify;
+  text-justify: inter-word;
+
+  padding: 0.2rem;
+
+  position: absolute;
+  z-index: -1;
+  top: 4rem;
+  left: 0;
+  width: 17rem;
+}
+.popdown-inner {
+  -webkit-clip-path: polygon(8% 5%, 100% 5%, 100% 100%, 0 100%, 0 5%, 3% 5%, 5% 0);
+  clip-path: polygon(8% 5%, 100% 5%, 100% 100%, 0 100%, 0 5%, 3% 5%, 5% 0);
+  padding: 0.7rem;
+  padding-top: 1rem;
+
+  background-color: whitesmoke;
+  color: gray;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 991.98px) { .popdown {top: 2.5rem;} }
+
+.popleft {
+  top: 0;
+  left: -11rem;
+  width: 10rem;
+
+  -webkit-clip-path: polygon(100% 5%, 95% 10%, 95% 100%, 0 100%, 0 0, 95% 0, 95% 5%);
+  clip-path: polygon(100% 5%, 95% 10%, 95% 100%, 0 100%, 0 0, 95% 0, 95% 5%);
+}
+.popleft .popdown-inner {
+  -webkit-clip-path: polygon(100% 5%, 95% 10%, 95% 100%, 0 100%, 0 0, 95% 0, 95% 5%);
+  clip-path: polygon(100% 5%, 95% 10%, 95% 100%, 0 100%, 0 0, 95% 0, 95% 5%);
+  padding: 1rem 1rem 2rem 0.5rem;
+}
+.popleft .help-cross {
+  right: 0.7rem;
+}
+
 .main-screen-icon {
   background-color: white;
   border-radius: 0.2rem;

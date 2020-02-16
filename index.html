@@ -94,6 +94,17 @@
             <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px"
               data-height="28px"></span>
         </button>
+
+        <div id="shcemeHelp" class="popdown">
+          <div class="popdown-inner">
+            Попробуйте разные режимы отображения, в том числе полноэкранный Twitch(2) и Синхро-режим(3), в котором
+            удобно настраивать задержку
+          </div>
+          <div class="help-cross">
+            <span class="iconify" data-icon="gridicons:cross-circle" data-inline="false" data-width="24px"
+              data-height="24px"></span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -112,6 +123,16 @@
       <button type="button" class="btn btn-dark px-lg-1 pt-lg-1 pb-lg-0 px-4 pt-3 pb-3" title="+1.0c"
         onclick="changeDelay(1.0)"><span class="iconify" data-icon="cil:chevron-double-right"
           data-inline="false"></span></button>
+
+      <div id="shiftHelp" class="popdown">
+        <div class="popdown-inner">
+          Настройте задержку, которую плеер YouTube будет плавно выдерживать
+        </div>
+        <div class="help-cross">
+          <span class="iconify" data-icon="gridicons:cross-circle" data-inline="false" data-width="24px"
+            data-height="24px"></span>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -123,9 +144,19 @@
       class="btn btn-dark pt-lg-1 pb-lg-0 px-lg-1 pt-md-2 pb-md-1 px-md-2 pt-5 pb-4 px-5" onclick="toggle_chat()">
       <span class="iconify" data-icon="ion:chatbox-ellipses-sharp" data-inline="false" data-width="20px"
         data-height="20px"></span>
+
+      <div id="chatHelp" class="popdown popleft">
+        <div class="popdown-inner">
+          У нас тут чатик.<br>Присоединяйтесь!
+        </div>
+        <div class="help-cross">
+          <span class="iconify" data-icon="gridicons:cross-circle" data-inline="false" data-width="24px"
+            data-height="24px"></span>
+        </div>
+      </div>
     </button>
-    <iframe frameborder="0" scrolling="no" id="chat_embed"
-      src="https://www.twitch.tv/embed/outbreak/chat?darkpopout" height="1440" width="360">
+    <iframe frameborder="0" scrolling="no" id="chat_embed" src="https://www.twitch.tv/embed/outbreak/chat?darkpopout"
+      height="1440" width="360">
     </iframe>
   </div>
 
