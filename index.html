@@ -54,7 +54,7 @@
 </head>
 
 <body>
-  <div class="main-container stream-with-chat" id="streamsContainer">
+  <div class="main-container" id="streamsContainer">
     <div class="main-stream-container" id="ytPlayerContainer">
       <div class="yt-container" id="ytPlayer"></div>
     </div>
@@ -95,7 +95,7 @@
               data-height="28px"></span>
         </button>
 
-        <div id="shcemeHelp" class="popdown">
+        <div id="shcemeHelp" class="popdown" onclick="hide_popover('shcemeHelp')">
           <div class="popdown-inner">
             Попробуйте разные режимы отображения, в том числе полноэкранный Twitch(2) и Синхро-режим(3), в котором
             удобно настраивать задержку
@@ -124,7 +124,7 @@
         onclick="changeDelay(1.0)"><span class="iconify" data-icon="cil:chevron-double-right"
           data-inline="false"></span></button>
 
-      <div id="shiftHelp" class="popdown">
+      <div id="shiftHelp" class="popdown" onclick="hide_popover('shiftHelp')">
         <div class="popdown-inner">
           Настройте задержку, которую плеер YouTube будет плавно выдерживать
         </div>
@@ -139,13 +139,13 @@
   <div class="sync-mode-placeholder d-none"></div>
   </div>
 
-  <div id="chatContainer" class="chat-container">
+  <div id="chatContainer" class="chat-container chat-hidden">
     <button id="chatToggleBtn" type="button"
       class="btn btn-dark pt-lg-1 pb-lg-0 px-lg-1 pt-md-2 pb-md-1 px-md-2 pt-5 pb-4 px-5" onclick="toggle_chat()">
       <span class="iconify" data-icon="ion:chatbox-ellipses-sharp" data-inline="false" data-width="20px"
         data-height="20px"></span>
 
-      <div id="chatHelp" class="popdown popleft">
+      <div id="chatHelp" class="popdown popleft" onclick="hide_popover('chatHelp')">
         <div class="popdown-inner">
           У нас тут чатик.<br>Присоединяйтесь!
         </div>
@@ -179,6 +179,7 @@
     ddur:<span id="gdur">NULL</span><br>
   </div>
 
+  <script src="popovers.js"></script>
   <script src="utils.js"></script>
   <script src="screen_scripts.js"></script>
   <script src="yt_scripts.js"></script>
