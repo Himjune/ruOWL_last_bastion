@@ -33,7 +33,7 @@ function onYouTubeIframeAPIReady() {
 var fixed_end_time_ts = '';
 var fixed_end_time = ''
 var cur_end_time = '';
-var fixed_delay = -3.0;
+var fixed_delay = -7.0;
 document.getElementById("delayValBtn").innerText = fixed_delay.toFixed(1) + 'с';
 
 function changeDelay(mod) {
