@@ -116,17 +116,18 @@
 
   </div>
   <div class="sync-mode-placeholder d-none"></div>
-
-  <button id="chatToggleBtn" type="button"
-    class="btn btn-dark pt-lg-1 pb-lg-0 px-lg-1 pt-md-2 pb-md-1 px-md-2 pt-4 pb-3 px-4" onclick="toggle_chat()">
-    <span class="iconify" data-icon="ion:chatbox-ellipses-sharp" data-inline="false" data-width="20px"
-      data-height="20px"></span>
-  </button>
   </div>
 
-  <iframe class="chat-container" frameborder="0" scrolling="no" id="chat_embed"
-    src="https://www.twitch.tv/embed/outbreak/chat?darkpopout" height="1440" width="360">
-  </iframe>
+  <div id="chatContainer" class="chat-container">
+    <button id="chatToggleBtn" type="button"
+      class="btn btn-dark pt-lg-1 pb-lg-0 px-lg-1 pt-md-2 pb-md-1 px-md-2 pt-5 pb-4 px-5" onclick="toggle_chat()">
+      <span class="iconify" data-icon="ion:chatbox-ellipses-sharp" data-inline="false" data-width="20px"
+        data-height="20px"></span>
+    </button>
+    <iframe frameborder="0" scrolling="no" id="chat_embed"
+      src="https://www.twitch.tv/embed/outbreak/chat?darkpopout" height="1440" width="360">
+    </iframe>
+  </div>
 
 
   <div class="d-none">

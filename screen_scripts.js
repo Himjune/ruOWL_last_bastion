@@ -26,7 +26,7 @@ function to_sync_scheme () {
 }
 
 function toggle_chat() {
-  let chatElem = document.getElementById("chat_embed");
+  let chatElem = document.getElementById("chatContainer");
 
   if (chatElem.className === "chat-container") {
     chatElem.className = "chat-container chat-hidden";
