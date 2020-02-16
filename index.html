@@ -13,7 +13,7 @@
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function (m, e, t, r, i, k, a) {
-    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
       m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
     })
       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -64,56 +64,64 @@
       <div id="schemeBtns" class="btn-group" role="group" aria-label="Схемы расположения">
         <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4" title="Главный - YouTube"
           onclick="to_yt_main_scheme()">
-          <span class="iconify position-absolute sub-screen-icon" data-icon="logos:twitch" data-inline="false"
-            data-width="16px" data-height="16px">
-          </span>
-          <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px"
-            data-height="28px"></span>
+          <div class="position-relative">
+            <span class="iconify position-absolute sub-screen-icon" data-icon="logos:twitch" data-inline="false"
+              data-width="16px" data-height="16px">
+            </span>
+            <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px"
+              data-height="28px"></span>
+          </div>
+
         </button>
 
-        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4" title="Главный - Twitch (ПротивоМобилкоРекламный)" onclick="to_tw_main_scheme()">
-          <span class="iconify position-absolute sub-screen-icon" data-icon="logos:youtube" data-inline="false"
-            data-width="16px" data-height="16px" style="top: 0.3rem; right: 0.4rem;">
-          </span>
-          <span class="iconify main-screen-icon" data-icon="logos:twitch" data-inline="false" data-width="40px"
-            data-height="28px"></span>
+        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4"
+          title="Главный - Twitch (ПротивоМобилкоРекламный)" onclick="to_tw_main_scheme()">
+          <div class="position-relative">
+            <span class="iconify position-absolute sub-screen-icon" data-icon="logos:youtube" data-inline="false"
+              data-width="16px" data-height="16px" style="top: 0.1rem; right: 0.1rem;">
+            </span>
+            <span class="iconify main-screen-icon" data-icon="logos:twitch" data-inline="false" data-width="40px"
+              data-height="28px"></span>
+          </div>
         </button>
 
-        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4 overflow-hidden" title="Синхро-режим"
-          onclick="to_sync_scheme()">
-          <span class="iconify position-absolute sync-screen-icon" data-icon="logos:twitch" data-inline="false"
-            data-width="40px" data-height="28px">
-          </span>
-          <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px"
-            data-height="28px"></span>
+        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4 overflow-hidden"
+          title="Синхро-режим" onclick="to_sync_scheme()">
+          <div class="position-relative">
+            <span class="iconify position-absolute sync-screen-icon" data-icon="logos:twitch" data-inline="false"
+              data-width="40px" data-height="28px">
+            </span>
+            <span class="iconify" data-icon="logos:youtube" data-inline="false" data-width="40px"
+              data-height="28px"></span>
         </button>
       </div>
-
-
-      <div id="shiftBtns" class="btn-group" role="group" aria-label="Настройка задержки">
-        <button type="button" class="btn btn-dark px-lg-1 pt-lg-2 px-3 pt-2 pb-2" title="-1.0c"
-          onclick="changeDelay(-1.0)"><span class="iconify" data-icon="cil:chevron-double-left"
-            data-inline="false"></span></button>
-        <button type="button" class="btn btn-dark px-lg-1 pt-lg-2 px-3 pt-2 pb-2" title="-0.1c"
-          onclick="changeDelay(-0.1)"><span class="iconify" data-icon="cil:chevron-left"
-            data-inline="false"></span></button>
-        <button id="delayValBtn" type="button" class="btn btn-dark px-2 pb-2" disabled>0.0с</button>
-        <button type="button" class="btn btn-dark px-lg-1 pt-lg-2 px-3 pt-2 pb-2" title="+0.1c"
-          onclick="changeDelay(0.1)"><span class="iconify" data-icon="cil:chevron-right"
-            data-inline="false"></span></button>
-        <button type="button" class="btn btn-dark px-lg-1 pt-lg-2 px-3 pt-2 pb-2" title="+1.0c"
-          onclick="changeDelay(1.0)"><span class="iconify" data-icon="cil:chevron-double-right"
-            data-inline="false"></span></button>
-      </div>
-
     </div>
-    <div class="sync-mode-placeholder d-none"></div>
 
-    <button id="chatToggleBtn" type="button"
-      class="btn btn-dark pt-lg-1 pb-lg-0 px-lg-1 pt-md-2 pb-md-1 px-md-2 pt-4 pb-3 px-4" onclick="toggle_chat()">
-      <span class="iconify" data-icon="ion:chatbox-ellipses-sharp" data-inline="false" data-width="20px"
-        data-height="20px"></span>
-    </button>
+
+    <div id="shiftBtns" class="btn-group" role="group" aria-label="Настройка задержки">
+      <button type="button" class="btn btn-dark px-lg-1 pt-lg-2 px-3 pt-2 pb-2" title="-1.0c"
+        onclick="changeDelay(-1.0)"><span class="iconify" data-icon="cil:chevron-double-left"
+          data-inline="false"></span></button>
+      <button type="button" class="btn btn-dark px-lg-1 pt-lg-2 px-3 pt-2 pb-2" title="-0.1c"
+        onclick="changeDelay(-0.1)"><span class="iconify" data-icon="cil:chevron-left"
+          data-inline="false"></span></button>
+      <button id="delayValBtn" type="button" class="btn btn-dark px-2 pb-2" disabled>0.0с</button>
+      <button type="button" class="btn btn-dark px-lg-1 pt-lg-2 px-3 pt-2 pb-2" title="+0.1c"
+        onclick="changeDelay(0.1)"><span class="iconify" data-icon="cil:chevron-right"
+          data-inline="false"></span></button>
+      <button type="button" class="btn btn-dark px-lg-1 pt-lg-2 px-3 pt-2 pb-2" title="+1.0c"
+        onclick="changeDelay(1.0)"><span class="iconify" data-icon="cil:chevron-double-right"
+          data-inline="false"></span></button>
+    </div>
+
+  </div>
+  <div class="sync-mode-placeholder d-none"></div>
+
+  <button id="chatToggleBtn" type="button"
+    class="btn btn-dark pt-lg-1 pb-lg-0 px-lg-1 pt-md-2 pb-md-1 px-md-2 pt-4 pb-3 px-4" onclick="toggle_chat()">
+    <span class="iconify" data-icon="ion:chatbox-ellipses-sharp" data-inline="false" data-width="20px"
+      data-height="20px"></span>
+  </button>
   </div>
 
   <iframe class="chat-container" frameborder="0" scrolling="no" id="chat_embed"
