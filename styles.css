@@ -142,7 +142,7 @@ body {
 
   #schemeBtns {
     position: fixed;
-    left: 20%;
+    left: 10%;
     top: 0.1rem;
     z-index: 10000;
   }
@@ -218,7 +218,7 @@ body {
 
   #schemeBtns {
     position: fixed;
-    left: 20%;
+    left: 10%;
     top: 0.1rem;
     z-index: 10000;
   }
