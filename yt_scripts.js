@@ -11,8 +11,8 @@ function onYouTubeIframeAPIReady() {
   if (videoId === '') {
     //videoId = 'zPm6tpIupq0'; // my test
     //videoId = '5Tw5xhRsonc'; // news stream
-    //videoId = '9C3BjtlcxxM'; // next owl
-    videoId = '07Z7jHgmsZE' // owl highlights
+    videoId = '9C3BjtlcxxM'; // next owl
+    //videoId = '07Z7jHgmsZE' // owl highlights
   }
 
   yt_player = new YT.Player('ytPlayer', {
@@ -33,7 +33,7 @@ function onYouTubeIframeAPIReady() {
 var fixed_end_time_ts = '';
 var fixed_end_time = ''
 var cur_end_time = '';
-var fixed_delay = -3.0;
+var fixed_delay = 0.0;
 document.getElementById("delayValBtn").innerText = fixed_delay.toFixed(1) + 'с';
 
 function changeDelay(mod) {
