@@ -45,7 +45,7 @@ function changeDelay(mod) {
 }
 
 function onPlayerReady(event) {
-  event.target.setVolume(25);
+  event.target.setVolume(10);
   setTimeout(function () {
     event.target.playVideo();
     event.target.seekTo(event.target.getDuration(), true);
