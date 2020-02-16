@@ -212,12 +212,17 @@ body {
     top: 0.25rem;
     z-index: 10000;
   }
+  
 
   #shiftBtns {
     position: fixed;
     top: 0.25rem;
     left: 40%;
     z-index: 10000;
+  }
+  .sync-stream-container #shiftBtns {
+    position: absolute;
+    top: -2rem;
   }
 }
 
@@ -283,16 +288,32 @@ body {
 
 
   #schemeBtns {
+    display: none;
     position: fixed;
     left: 0.25rem;
     top: 0.25rem;
     z-index: 10000;
   }
+}
 
-  #shiftBtns {
-    position: fixed;
-    top: 0.25rem;
-    left: 40%;
-    z-index: 10000;
-  }
+
+
+
+#shiftBtns {
+  visibility: hidden;
+  position: fixed;
+  top: 0.25rem;
+  left: 40%;
+  z-index: 10000;
+}
+.sync-stream-container #shiftBtns {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
