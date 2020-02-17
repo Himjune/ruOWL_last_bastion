@@ -11,8 +11,8 @@ function onYouTubeIframeAPIReady() {
   if (videoId === '') {
     //videoId = 'zPm6tpIupq0'; // my test
     //videoId = '5Tw5xhRsonc'; // news stream
-    videoId = '9C3BjtlcxxM'; // next owl
-    //videoId = '07Z7jHgmsZE' // owl highlights
+    //videoId = '9C3BjtlcxxM'; // next owl
+    videoId = '07Z7jHgmsZE' // owl highlights
   }
 
   yt_player = new YT.Player('ytPlayer', {
@@ -33,7 +33,7 @@ function onYouTubeIframeAPIReady() {
 var fixed_end_time_ts = '';
 var fixed_end_time = ''
 var cur_end_time = '';
-var fixed_delay = -7.0;
+var fixed_delay = 0.0;
 document.getElementById("delayValBtn").innerText = fixed_delay.toFixed(1) + 'с';
 
 function changeDelay(mod) {
@@ -46,11 +46,13 @@ function changeDelay(mod) {
 
 function onPlayerReady(event) {
   event.target.setVolume(10);
-  setTimeout(function () {
+  
+  /*setTimeout(function () {
     event.target.playVideo();
     event.target.seekTo(event.target.getDuration(), true);
-  }, 5000);
+  }, 5000);*/
 
+  /*
   setInterval(function () {
 
     cur_end_time = (Date.now() - fixed_end_time_ts) / 1000 + fixed_end_time;
@@ -83,7 +85,11 @@ function onPlayerReady(event) {
     else if (diff < -0.3) yt_player.setPlaybackRate(0.75);
     else yt_player.setPlaybackRate(1);
 
-  }, 1000);
+  }, 1000);*/
+}
+
+function yt_start_video(vid, time) {
+  yt_player.loadVideoById(vid,time);
 }
 
 function onPlayerStateChange(event) {

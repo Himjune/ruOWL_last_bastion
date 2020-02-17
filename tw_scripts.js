@@ -12,10 +12,12 @@ tw_player.setVolume(1.0);
 tw_player.setMuted(false);
 tw_player.play();
 
-function tw_start_video(vid) {
-  tw_player.setVideo('v'+vid, 0);
+function tw_start_video(vid, time) {
+  tw_player.setVideo('v'+vid, time);
 }
-
+setInterval(function () {
+  //console.log ('tw',tw_player.getCurrentTime(),tw_player.getDuration(),tw_player.getEnded());
+},1000);
 
 /*
 embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
