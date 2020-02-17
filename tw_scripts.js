@@ -1,18 +1,25 @@
-let props = {
+const def_props = {
   width: 320,
   height: 180,
-  video: "553104471",
-  //channel: "himukee",
-  //channel: "outbreak",
+  channel: "outbreak",
   layout: "video",
   theme: "dark",
-  autoplay: false
+  autoplay: true
 }
 
-var embed = new Twitch.Embed("twPlayer", props);
-var g_player;
-var player_ready = false;
+var tw_player = new Twitch.Player("twPlayer", def_props);
+tw_player.setVolume(1.0);
+tw_player.setMuted(false);
+tw_player.play();
+
+function tw_start_video(vid) {
+  tw_player.setVideo('v'+vid, 0);
+}
+
+
+/*
 embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+  console.log('em',embed);
   g_player = embed.getPlayer();
   g_player.play();
   player_ready = true;
@@ -24,5 +31,17 @@ embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
 });
 
 function tw_start_video(vid) {
-  g_player.setVideo("553104471",10);
+  if (player_ready) {
+    g_player = embed.getPlayer();
+    //g_player.setVideo('v'+vid,10);
+    g_player.pause();
+  } else {
+    setTimeout(function () {
+      console.log('go',vid)
+      g_player = embed.getPlayer();
+      //g_player.setVideo('v'+vid,10);
+    g_player.pause();
+    },3000);
+  }
 }
+*/
