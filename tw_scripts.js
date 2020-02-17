@@ -19,6 +19,6 @@ embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
   g_player.setVolume(1.0);
   g_player.setMuted(false);
   setInterval(function () {
-    console.log ('tw',g_player.getCurrentTime(),g_player.getDuration(),g_player.getEnded());
+    //console.log ('tw',g_player.getCurrentTime(),g_player.getDuration(),g_player.getEnded());
   },1000);
 });
