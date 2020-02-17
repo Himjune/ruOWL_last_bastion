@@ -9,7 +9,7 @@ let props = {
   autoplay: false
 }
 
-var embed = new Twitch.Embed("twPlayer", props);
+var embed = new Twitch.Embed("twPlayerEntry", props);
 var g_player;
 var player_ready = false;
 embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
