@@ -3,7 +3,7 @@ let props = {
   height: 180,
   //video: "548294329",
   //channel: "himukee",
-  channel: "wincond",
+  channel: "outbreak",
   layout: "video",
   theme: "dark",
   autoplay: false
@@ -19,10 +19,6 @@ embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
   g_player.setVolume(1.0);
   g_player.setMuted(false);
   setInterval(function () {
-    //console.log ('tw',g_player.getCurrentTime(),g_player.getDuration(),g_player.getEnded());
+    console.log ('tw',g_player.getCurrentTime(),g_player.getDuration(),g_player.getEnded());
   },1000);
-  let ela = document.getElementById("twPlayer").getElementsByTagName("iframe")[0];
-  console.log('1',ela);
-  var element = ela.contentWindow.document.querySelector('span');
-  console.log('2',element);
 });
