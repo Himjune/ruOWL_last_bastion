@@ -95,6 +95,14 @@ body {
 }
 
 @media (orientation: landscape) {
+  #replaysDropup {
+    position: absolute;
+    bottom: 0.25rem;
+    left: 0.25rem;
+    
+    z-index: 30000;
+  }
+
   .main-container {
     background-color: black;
     overflow: hidden;
@@ -311,5 +319,13 @@ body {
 }
 @media (min-width: 991.98px) { #schemeBtns {opacity: 0.90;} }
 #schemeBtns:hover {
+  opacity: 0.90;
+}
+
+#replaysDropup {
+  opacity: 0.65;
+}
+@media (min-width: 991.98px) { #replaysDropup {opacity: 0.90;} }
+#replaysDropup:hover {
   opacity: 0.90;
 }
