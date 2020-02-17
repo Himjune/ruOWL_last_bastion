@@ -7,7 +7,6 @@ var replays = [
     {tw_ts: 2641, yt_id: "iyGLAL87LMQ", yt_ts: 4139},
     {tw_ts: 9008, yt_id: "iyGLAL87LMQ", yt_ts: 10499},
     {tw_ts: 15293, yt_id: "eYN-IgtHo-c", yt_ts: 1077},
-    {tw_ts: 1529300, yt_id: "eYN-IgtHo-c", yt_ts: 1077},
   ] },
   { tw_id: "549415451" },
   { tw_id: "552533603" },
@@ -35,6 +34,7 @@ function start_replay(idx) {
     mark_idx = replay.marks.findIndex(function (m){
       return m.tw_ts > tw_time;
     }) - 1;
+    if (mark_idx < 0) mark_idx = replay.marks.length - 1;
 
     diff = replay.marks[mark_idx].yt_ts-replay.marks[mark_idx].tw_ts;
 
