@@ -132,7 +132,7 @@ body {
   }
   
   .sync-mode-placeholder {
-    display: none !important;
+    display: none;
   }
 
   .sync-stream-container {
@@ -255,6 +255,7 @@ body {
   }
 
   .sync-mode-placeholder {
+    display: block;
     width: 100%;
     height: 28vw;
     background-color: gray;
