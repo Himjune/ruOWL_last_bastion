@@ -1,9 +1,9 @@
 let props = {
   width: 320,
   height: 180,
-  //video: "548294329",
+  video: "553104471",
   //channel: "himukee",
-  channel: "outbreak",
+  //channel: "outbreak",
   layout: "video",
   theme: "dark",
   autoplay: false
@@ -22,3 +22,7 @@ embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
     //console.log ('tw',g_player.getCurrentTime(),g_player.getDuration(),g_player.getEnded());
   },1000);
 });
+
+function tw_start_video(vid) {
+  g_player.setVideo("553104471",10);
+}
