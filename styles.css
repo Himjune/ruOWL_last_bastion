@@ -64,6 +64,18 @@ body {
   right: 0.7rem;
 }
 
+.popup {
+  top: auto;
+  bottom: 2.5rem;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 8% 95%, 5% 100%, 3% 95%, 0 95%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 8% 95%, 5% 100%, 3% 95%, 0 95%);
+}
+.popup .popdown-inner {
+  padding-top: 0.4rem;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 8% 95%, 5% 100%, 3% 95%, 0 95%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 8% 95%, 5% 100%, 3% 95%, 0 95%);
+}
+
 .main-screen-icon {
   background-color: white;
   border-radius: 0.2rem;
@@ -314,18 +326,18 @@ body {
   -o-transform: translate(-50%, -50%);
 }
 
-#schemeBtns {
+#schemeBtns .btn-group {
   opacity: 0.65;
 }
-@media (min-width: 991.98px) { #schemeBtns {opacity: 0.90;} }
-#schemeBtns:hover {
+@media (min-width: 991.98px) { #schemeBtns .btn-group {opacity: 0.90;} }
+#schemeBtns:hover .btn-group {
   opacity: 0.90;
 }
 
-#replaysDropup {
+#replaysDropup .btn-group {
   opacity: 0.65;
 }
-@media (min-width: 991.98px) { #replaysDropup {opacity: 0.90;} }
-#replaysDropup:hover {
+@media (min-width: 991.98px) { #replaysDropup .btn-group {opacity: 0.90;} }
+#replaysDropup:hover .btn-group {
   opacity: 0.90;
 }
