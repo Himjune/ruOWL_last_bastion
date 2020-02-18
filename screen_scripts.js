@@ -36,3 +36,42 @@ function toggle_chat() {
     document.getElementById("streamsContainer").className = "main-container stream-with-chat";
   }
 }
+
+var is_fullscreen = false;
+function toggle_fullscreen() {
+  var elem = document.getElementById("streamsContainer");
+
+  if (!is_fullscreen) {
+    is_fullscreen = true;
+    document.getElementById("toFs").style.display = "none";
+    document.getElementById("fromFs").style.display = "inline-block";
+
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      elem.msRequestFullscreen();
+    } else {
+      is_fullscreen = false;
+    }
+  } else {
+    is_fullscreen = false;
+    document.getElementById("toFs").style.display = "inline-block";
+    document.getElementById("fromFs").style.display = "none";
+
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { /* Firefox */
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE/Edge */
+      document.msExitFullscreen();
+    } else {
+      is_fullscreen = true;
+    }
+  }
+}
