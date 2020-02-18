@@ -10,9 +10,17 @@ var replays = [
     {tw_ts: 9008, yt_id: "iyGLAL87LMQ", yt_ts: 10499},
     {tw_ts: 15293, yt_id: "eYN-IgtHo-c", yt_ts: 1077},
   ] },
-  { tw_id: "549415451" },
-  { tw_id: "552533603" },
-  { tw_id: "553104471" }
+  { tw_id: "549415451", marks: [
+    {tw_ts: 0, yt_id: "JOZ636tLVzQ", yt_ts: 1539}, // init
+  ] },
+  { tw_id: "552533603", marks: [
+    {tw_ts: 0, yt_id: "mDSy-lfE4Js", yt_ts: 2048}, // init
+    {tw_ts: 1803, yt_id: "mDSy-lfE4Js", yt_ts: 3851}, // busan
+  ] },
+  { tw_id: "553104471", marks: [
+    {tw_ts: 0, yt_id: "9C3BjtlcxxM", yt_ts: 2255.5}, // init
+    {tw_ts: 892, yt_id: "9C3BjtlcxxM", yt_ts: 3147.5}, // lijung
+  ] }
 ]
 
 function start_replay(idx) {
