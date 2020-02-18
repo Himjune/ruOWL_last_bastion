@@ -1,10 +1,12 @@
 var replays = [
   { tw_id: "548852143", marks: [
     {tw_ts: 0, yt_id: "iyGLAL87LMQ", yt_ts: 1506}, // init
-    {tw_ts: 1475, yt_id: "iyGLAL87LMQ", yt_ts: 2976}, // lijung
-    {tw_ts: 1554, yt_id: "iyGLAL87LMQ", yt_ts: 3055}, //
-    {tw_ts: 2521, yt_id: "iyGLAL87LMQ", yt_ts: 4016},
-    {tw_ts: 2641, yt_id: "iyGLAL87LMQ", yt_ts: 4139},
+    {tw_ts: 1475, yt_id: "iyGLAL87LMQ", yt_ts: 2976}, // prelijung
+    {tw_ts: 1554, yt_id: "iyGLAL87LMQ", yt_ts: 3055}, // lijung
+    {tw_ts: 2521, yt_id: "iyGLAL87LMQ", yt_ts: 4016}, // preeinch
+    {tw_ts: 2641, yt_id: "iyGLAL87LMQ", yt_ts: 4139.5}, //einch
+    {tw_ts: 4715, yt_id: "iyGLAL87LMQ", yt_ts: 6221}, //prehoriz
+    {tw_ts: 6250, yt_id: "iyGLAL87LMQ", yt_ts: 7755.45}, //havan
     {tw_ts: 9008, yt_id: "iyGLAL87LMQ", yt_ts: 10499},
     {tw_ts: 15293, yt_id: "eYN-IgtHo-c", yt_ts: 1077},
   ] },
@@ -14,6 +16,8 @@ var replays = [
 ]
 
 function start_replay(idx) {
+  to_tw_main_scheme();
+
   idx = parseInt(idx,10);
 
   var replay = replays[idx];
@@ -55,8 +59,7 @@ function start_replay(idx) {
     if (yt_diff > 5) yt_player.seekTo(tar_yt_time,true);
     else if (yt_diff > 2) yt_player.setPlaybackRate(2);
     else if (yt_diff > 0.3) yt_player.setPlaybackRate(1.25);
-    else if (yt_diff < -5) yt_player.seekTo(tar_yt_time,true);
-    else if (yt_diff < -2) yt_player.setPlaybackRate(0.25);
+    else if (yt_diff < -1) yt_player.seekTo(tar_yt_time,true);
     else if (yt_diff < -0.3) yt_player.setPlaybackRate(0.75);
     else yt_player.setPlaybackRate(1);
   }, 700);
