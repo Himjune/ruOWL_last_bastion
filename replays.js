@@ -57,9 +57,9 @@ function start_replay(idx) {
 
     if (yt_diff > 5) yt_player.seekTo(tar_yt_time,true);
     else if (yt_diff > 2) yt_player.setPlaybackRate(2);
-    else if (yt_diff > 0.3) yt_player.setPlaybackRate(1.25);
+    else if (yt_diff > 0.1) yt_player.setPlaybackRate(1.25);
     else if (yt_diff < -1) yt_player.seekTo(tar_yt_time,true);
-    else if (yt_diff < -0.3) yt_player.setPlaybackRate(0.75);
+    else if (yt_diff < -0.1) yt_player.setPlaybackRate(0.75);
     else yt_player.setPlaybackRate(1);
   }, 700);
 }
