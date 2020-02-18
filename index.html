@@ -99,7 +99,14 @@
 
     <div id="schemeBtns" class="btn-group-container">      
       <div class="btn-group" role="group" aria-label="Схемы расположения">
-        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4 overflow-hidden"
+
+        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4"
+          title="Показать/скрыть интерфейс" onclick="toggle_interface()">
+          <span id="hideInterface" class="iconify" data-icon="ant-design:eye-invisible-filled" data-inline="false" data-width="24px" data-height="24px"></span>
+          <span id="showInterface" style="display: none; opacity: 0.2;" class="iconify" data-icon="ant-design:eye-filled" data-inline="false" data-width="24px" data-height="24px"></span>
+        </button>
+
+        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4 overflow-hidden interface"
           title="Синхро-режим" onclick="to_sync_scheme()">
           <div class="position-relative">
             <span class="iconify position-absolute sync-screen-icon" data-icon="logos:twitch" data-inline="false"
@@ -109,7 +116,7 @@
               data-height="28px"></span>
         </button>
 
-        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4" title="Главный - YouTube"
+        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4 interface" title="Главный - YouTube"
           onclick="to_yt_main_scheme()">
           <div class="position-relative">
             <span class="iconify position-absolute sub-screen-icon" data-icon="logos:twitch" data-inline="false"
@@ -120,7 +127,7 @@
           </div>
         </button>
 
-        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4"
+        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4 interface"
           title="Главный - Twitch (ПротивоМобилкоРекламный)" onclick="to_tw_main_scheme()">
           <div class="position-relative">
             <span class="iconify position-absolute sub-screen-icon" data-icon="logos:youtube" data-inline="false"
@@ -131,7 +138,7 @@
           </div>
         </button>
 
-        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4"
+        <button type="button" class="btn btn-dark p-lg-0 pt-lg-1 px-lg-2 p-2 pt-3 px-4 interface"
           title="Полноэкранный" onclick="toggle_fullscreen()">
           <span id="toFs" class="iconify" data-icon="si-glyph:arrow-resize-1" data-inline="false" data-width="24px" data-height="24px"></span>
           <span id="fromFs" style="display: none;" class="iconify" data-icon="si-glyph:arrow-resize-3" data-inline="false" data-width="24px" data-height="24px"></span>
@@ -150,7 +157,7 @@
       </div>
     </div>
 
-    <div class="btn-group dropup" id="replaysDropup">
+    <div class="btn-group dropup interface" id="replaysDropup">
       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Записи
       </button>
@@ -180,7 +187,7 @@
 
   <div id="chatContainer" class="chat-container chat-hidden">
     <button id="chatToggleBtn" type="button"
-      class="btn btn-dark pt-lg-1 pb-lg-0 px-lg-1 pt-md-2 pb-md-1 px-md-2 pt-5 pb-4 px-5" onclick="toggle_chat()">
+      class="btn btn-dark pt-lg-1 pb-lg-0 px-lg-1 pt-md-2 pb-md-1 px-md-2 pt-5 pb-4 px-5 interface" onclick="toggle_chat()">
       <span class="iconify" data-icon="ion:chatbox-ellipses-sharp" data-inline="false" data-width="20px"
         data-height="20px"></span>
 

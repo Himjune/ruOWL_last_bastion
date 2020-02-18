@@ -75,3 +75,26 @@ function toggle_fullscreen() {
     }
   }
 }
+
+var is_iface_hidden = false;
+function toggle_interface() {
+  if (!is_iface_hidden) {
+    is_iface_hidden = true;
+    document.getElementById("showInterface").style.display = "inline-block";
+    document.getElementById("hideInterface").style.display = "none";
+
+    let elems = document.getElementsByClassName("interface");
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].style.visibility = "hidden";
+    }
+  } else {
+    is_iface_hidden = false;
+    document.getElementById("showInterface").style.display = "none";
+    document.getElementById("hideInterface").style.display = "inline-block";
+    
+    let elems = document.getElementsByClassName("interface");
+    for (var i = 0; i < elems.length; i++) {
+      elems[i].style.visibility = "visible";
+    }
+  }
+}
