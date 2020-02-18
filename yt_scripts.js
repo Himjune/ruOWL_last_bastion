@@ -36,10 +36,15 @@ var cur_end_time = '';
 var fixed_delay = 0.0;
 document.getElementById("delayValBtn").innerText = fixed_delay.toFixed(1) + 'с';
 
+function dropDelay() {
+  fixed_delay = 0.0;
+  document.getElementById("delayValBtn").innerText = fixed_delay.toFixed(1) + 'с';
+}
+
 function changeDelay(mod) {
   mod = parseFloat(mod);
   fixed_delay = fixed_delay + mod;
-  if (fixed_delay > 5.0) fixed_delay = 5.0;
+  //if (fixed_delay > 5.0) fixed_delay = 5.0;
 
   document.getElementById("delayValBtn").innerText = fixed_delay.toFixed(1) + 'с';
 }

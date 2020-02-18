@@ -17,6 +17,7 @@ var replays = [
 
 function start_replay(idx) {
   to_tw_main_scheme();
+  dropDelay();
 
   idx = parseInt(idx,10);
 
@@ -40,7 +41,7 @@ function start_replay(idx) {
     }) - 1;
     if (mark_idx < 0) mark_idx = replay.marks.length - 1;
 
-    diff = replay.marks[mark_idx].yt_ts-replay.marks[mark_idx].tw_ts;
+    diff = replay.marks[mark_idx].yt_ts + fixed_delay - replay.marks[mark_idx].tw_ts;
 
     if (replay.marks[mark_idx].yt_id !== cur_yt_id) {
       cur_yt_id = replay.marks[mark_idx].yt_id;
@@ -53,8 +54,6 @@ function start_replay(idx) {
     let tar_yt_time = tw_time + diff;
 
     let yt_diff = tar_yt_time-yt_time;
-
-    console.log(mark_idx,diff,tw_time,yt_time,tar_yt_time,yt_diff);
 
     if (yt_diff > 5) yt_player.seekTo(tar_yt_time,true);
     else if (yt_diff > 2) yt_player.setPlaybackRate(2);
