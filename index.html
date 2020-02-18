@@ -58,8 +58,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
-  <script src="https://embed.twitch.tv/embed/v1.js"></script>
-  <script src="https://player.twitch.tv/js/embed/v1.js"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 
@@ -151,10 +149,10 @@
         Записи
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item replay-selector" href="#tw=548852143">День 1 (08.02)</a>
-        <a class="dropdown-item replay-selector" href="#tw=549415451">День 2 (09.02)</a>
-        <a class="dropdown-item replay-selector" href="#tw=552533603">День 3 (15.02)</a>
-        <a class="dropdown-item replay-selector" href="#tw=553104471">День 4 (16.02)</a>
+        <a class="dropdown-item replay-selector" href="#" onclick="start_replay('0')">День 1 (08.02)</a>
+        <a class="dropdown-item replay-selector" href="#" onclick="start_replay('1')">День 2 (09.02)</a>
+        <a class="dropdown-item replay-selector" href="#" onclick="start_replay('2')">День 3 (15.02)</a>
+        <a class="dropdown-item replay-selector" href="#" onclick="start_replay('3')">День 4 (16.02)</a>
       </div>
 
       <div id="replaysHelp" class="popdown popup" onclick="hide_popover('replaysHelp')">
@@ -217,8 +215,12 @@
   <script src="popovers.js"></script>
   <script src="utils.js"></script>
   <script src="screen_scripts.js"></script>
+
   <script src="yt_scripts.js"></script>
+
+  <script src="https://player.twitch.tv/js/embed/v1.js"></script>
   <script src="tw_scripts.js"></script>
+
   <script src="replays.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

@@ -109,8 +109,8 @@ body {
 @media (orientation: landscape) {
   #replaysDropup {
     position: absolute;
-    bottom: 0.25rem;
-    left: 15rem;
+    bottom: 5rem;
+    left: 0.25rem;
     
     z-index: 30000;
   }
