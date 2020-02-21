@@ -36,6 +36,7 @@ var fixed_last_try_ts = null;
 var fixed_end_time = null;
 var cur_end_time = null;
 var fixed_delay = 0.0;
+var play_spd_def = 2;
 var onlineTimerId = null;
 document.getElementById("delayValBtn").innerText = fixed_delay.toFixed(1) + 'с';
 
@@ -76,19 +77,23 @@ function onPlayerReady(event) {
       save_fix_end_time();
     }
     */
-
+    var diff = 0;
     if (fixed_end_time === null) {
       if (yt_player.getPlaybackRate() !== 1) yt_player.setPlaybackRate(1);
     } else {
-      cur_end_time = fixed_end_time - fixed_end_time_ts + Date.now() / 1000;
-      let diff = cur_end_time - yt_player.getCurrentTime() + fixed_delay - 0.1; // -0.1 coz youtube should be in past by default
-
-      if (diff > 2) yt_player.setPlaybackRate(2);
-      else if (diff > 0.2) yt_player.setPlaybackRate(1.25);
-      else if (diff < -2) yt_player.setPlaybackRate(0.25);
-      else if (diff < -0.2) yt_player.setPlaybackRate(0.75);
-      else yt_player.setPlaybackRate(1);
-
+      play_spd_def--;
+      if (play_spd_def >= 0) {
+        if (yt_player.getPlaybackRate() !== 1) yt_player.setPlaybackRate(1);
+      } else {
+        cur_end_time = fixed_end_time - fixed_end_time_ts + Date.now() / 1000;
+        diff = cur_end_time - yt_player.getCurrentTime() + fixed_delay - 0.1; // -0.1 coz youtube should be in past by default
+  
+        if (diff > 2) yt_player.setPlaybackRate(2);
+        else if (diff > 0.2) yt_player.setPlaybackRate(1.25);
+        else if (diff < -2) yt_player.setPlaybackRate(0.25);
+        else if (diff < -0.2) yt_player.setPlaybackRate(0.75);
+        else yt_player.setPlaybackRate(1);
+      }
       console.log('Tim f_ts:', fixed_end_time_ts, 'f:', fixed_end_time, 'ce:', cur_end_time, 'd:', diff, 'yt:', yt_player.getCurrentTime());
     }
   }, 1000);
@@ -103,6 +108,8 @@ function yt_start_video(vid, time) {
 function onPlayerStateChange(event) {
   // OnPlay
   if (event.data == 1) {
+    play_spd_def = 3;
+    if (yt_player.getPlaybackRate() !== 1) yt_player.setPlaybackRate(1);
     console.log('onP f_ts:', fixed_end_time_ts, 'f:', fixed_end_time, 'ce:', cur_end_time, 'yt:', yt_player.getCurrentTime());
     if (fixed_end_time_ts === null || (yt_player.getCurrentTime() > ((fixed_end_time - fixed_end_time_ts) + Date.now() / 1000))) {
       save_fix_end_time();
@@ -111,7 +118,7 @@ function onPlayerStateChange(event) {
 }
 
 function save_fix_end_time() {
-  if (fixed_last_try_ts === null || fixed_last_try_ts - Date.now() > 3000) {
+  if (fixed_last_try_ts === null || Date.now() - fixed_last_try_ts > 3000) {
     console.log('good try',fixed_last_try_ts,fixed_last_try_ts - Date.now());
     fixed_last_try_ts = Date.now();
     fixed_end_time_ts = Date.now() / 1000;
