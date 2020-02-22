@@ -176,6 +176,14 @@ body {
   @media (min-width: 1000px) and (orientation: landscape) { .sub-stream-container {width: 250px; height: 140px;} }
   @media (min-width: 1600px) and (orientation: landscape) { .sub-stream-container {width: 400px; height: 225px;} }
 
+  .yt-notepad {
+    position: absolute;
+    left: 11%;
+    width: 57%;
+    top: 26% !important;
+    height: 50%;
+  }
+
   .chat-container {
     width: 25vw;
     height: 99vh;

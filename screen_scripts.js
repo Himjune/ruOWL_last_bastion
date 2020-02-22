@@ -16,6 +16,16 @@ function to_tw_main_scheme () {
   document.getElementsByClassName("sync-mode-placeholder")[0].className = "sync-mode-placeholder d-none";
 }
 
+function to_notepad_scheme () {
+  let ytCont = document.getElementById("ytPlayerContainer");
+  let twCont = document.getElementById("twPlayer");
+
+  ytCont.className = "sub-stream-container yt-notepad";
+  twCont.className = "main-stream-container";
+  document.getElementsByClassName("sync-mode-placeholder")[0].className = "sync-mode-placeholder d-none";
+}
+
+
 function to_sync_scheme () {
   let ytCont = document.getElementById("ytPlayerContainer");
   let twCont = document.getElementById("twPlayer");
