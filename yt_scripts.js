@@ -111,7 +111,11 @@ function onPlayerStateChange(event) {
     play_spd_def = 3;
     if (yt_player.getPlaybackRate() !== 1) yt_player.setPlaybackRate(1);
     console.log('onP f_ts:', fixed_end_time_ts, 'f:', fixed_end_time, 'ce:', cur_end_time, 'yt:', yt_player.getCurrentTime());
-    if (fixed_end_time_ts === null || (yt_player.getCurrentTime() > ((fixed_end_time - fixed_end_time_ts) + Date.now() / 1000))) {
+    if (!is_replay && 
+        (fixed_end_time_ts === null || 
+          (yt_player.getCurrentTime() > ((fixed_end_time - fixed_end_time_ts) + Date.now() / 1000))
+        )
+      ) {
       save_fix_end_time();
     }
   }
