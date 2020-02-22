@@ -45,6 +45,7 @@ function dropDelay() {
   document.getElementById("delayValBtn").innerText = fixed_delay.toFixed(1) + 'с';
   if (yt_player.getPlaybackRate() !== 1) yt_player.setPlaybackRate(1);
   if (!is_replay) {
+    if (yt_player.getPlayerState() !== 1) yt_player.playVideo();
     yt_player.seekTo(yt_player.getDuration(),true);
   }
 }
