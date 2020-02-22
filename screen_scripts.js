@@ -82,7 +82,8 @@ function toggle_interface() {
     is_iface_hidden = true;
     document.getElementById("showInterface").style.display = "inline-block";
     document.getElementById("hideInterface").style.display = "none";
-    document.getElementById("hideBtn").style.opacity = 0.4;
+    document.getElementById("hideBtn").style.opacity = 0.3;
+    document.getElementById("fsBtn").style.opacity = 0.3;
 
     let elems = document.getElementsByClassName("interface");
     for (var i = 0; i < elems.length; i++) {
@@ -92,7 +93,8 @@ function toggle_interface() {
     is_iface_hidden = false;
     document.getElementById("showInterface").style.display = "none";
     document.getElementById("hideInterface").style.display = "inline-block";
-    document.getElementById("hideBtn").style.opacity = 1.0;
+    document.getElementById("hideBtn").style.opacity = 0.9;
+    document.getElementById("fsBtn").style.opacity = 0.9;
     
     let elems = document.getElementsByClassName("interface");
     for (var i = 0; i < elems.length; i++) {
