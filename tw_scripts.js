@@ -9,9 +9,12 @@ const def_props = {
 }
 
 var tw_player = new Twitch.Player("twPlayer", def_props);
-tw_player.setVolume(1.0);
-tw_player.setMuted(false);
-tw_player.play();
+
+tw_player.addEventListener(Twitch.Player.READY, () => {
+  tw_player.setVolume(1.0);
+  tw_player.setMuted(false);
+  tw_player.play();
+});
 
 function tw_start_video(vid, time) {
   tw_player.setVideo('v'+vid, time);
