@@ -43,6 +43,9 @@ document.getElementById("delayValBtn").innerText = fixed_delay.toFixed(1) + 'с'
 function dropDelay() {
   fixed_delay = 0.0;
   document.getElementById("delayValBtn").innerText = fixed_delay.toFixed(1) + 'с';
+  if (!is_replay) {
+    yt_player.seekTo(yt_player.getDuration(),true);
+  }
 }
 
 function changeDelay(mod) {
