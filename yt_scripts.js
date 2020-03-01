@@ -11,7 +11,7 @@ function onYouTubeIframeAPIReady() {
   if (videoId === '') {
     //videoId = '33ENT8wlROM'; // my test
     //videoId = '5Tw5xhRsonc'; // news stream
-    videoId = '7tI4VpH1SlI'; // next owl
+    videoId = 'gUx9-hCzq8g'; // next owl
     //videoId = 'oEfQawTuAbw' // owl highlights
   }
 
