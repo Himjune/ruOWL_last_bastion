@@ -1,6 +1,6 @@
 const def_props = {
-  width: 320,
-  height: 180,
+  width: 400,
+  height: 300,
   channel: "outbreak",
   //channel: "himukee",
   layout: "video",
