@@ -31,7 +31,10 @@ function startYt() {
 
 }
 
-var saveTimeout = setTimeout(startYt, 500);
+var saveTimeout = setTimeout(() => {
+  console.log('fromTimout');
+  startYt()
+}, 500);
 
 function onYouTubeIframeAPIReady() {
   console.log('ytReady');
