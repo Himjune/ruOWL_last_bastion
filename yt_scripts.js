@@ -1,20 +1,20 @@
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
 var yt_player;
-function onYouTubeIframeAPIReady() {
-  console.log('ytReady');
-  let videoId = util_get_query_param('yt');
+var videoId = util_get_query_param('yt');
 
-  if (videoId === '') {
-    //videoId = get_current_yt_ow_channel();
-  }
+if (videoId === '') {
+  //videoId = get_current_yt_ow_channel();
+}
 
-  if (videoId === '') {
-    //videoId = '33ENT8wlROM'; // my test
-    //videoId = '5Tw5xhRsonc'; // news stream
-    videoId = '3VktwQj6_Uw'; // next owl
-    //videoId = 'oEfQawTuAbw' // owl highlights
-  }
+if (videoId === '') {
+  //videoId = '33ENT8wlROM'; // my test
+  //videoId = '5Tw5xhRsonc'; // news stream
+  videoId = '3VktwQj6_Uw'; // next owl
+  //videoId = 'oEfQawTuAbw' // owl highlights
+}
+
+function startYt() {
 
   yt_player = new YT.Player('ytPlayer', {
     height: '360',
@@ -28,6 +28,18 @@ function onYouTubeIframeAPIReady() {
   });
 
   console.log('ytInited', yt_player);
+
+}
+
+var saveTimeout = setTimeout(startYt, 500);
+
+function onYouTubeIframeAPIReady() {
+  console.log('ytReady');
+
+  clearTimeout(saveTimeout);
+
+  startYt();
+
 }
 
 // 4. The API will call this function when the video player is ready.
@@ -49,7 +61,7 @@ function dropDelay() {
   if (yt_player.getPlaybackRate() !== 1) yt_player.setPlaybackRate(1);
   if (!is_replay) {
     if (yt_player.getPlayerState() !== 1) yt_player.playVideo();
-    yt_player.seekTo(yt_player.getDuration(),true);
+    yt_player.seekTo(yt_player.getDuration(), true);
   }
 }
 
@@ -80,7 +92,7 @@ function onPlayerReady(event) {
     document.getElementById("cspe").innerText = yt_player.getPlaybackRate();
     document.getElementById("gdur").innerText = yt_player.getDuration();
     */
-    
+
     /*
     if (fixed_end_time_ts !== null && (yt_player.getCurrentTime() > ((fixed_end_time - fixed_end_time_ts) + Date.now() / 1000))) {
       save_fix_end_time();
@@ -96,7 +108,7 @@ function onPlayerReady(event) {
       } else {
         cur_end_time = fixed_end_time - fixed_end_time_ts + Date.now() / 1000;
         diff = cur_end_time - yt_player.getCurrentTime() + fixed_delay - 0.1; // -0.1 coz youtube should be in past by default
-  
+
         if (diff > 2) yt_player.setPlaybackRate(2);
         else if (diff > 0.2) yt_player.setPlaybackRate(1.25);
         else if (diff < -2) yt_player.setPlaybackRate(0.25);
@@ -120,11 +132,11 @@ function onPlayerStateChange(event) {
     play_spd_def = 3;
     if (yt_player.getPlaybackRate() !== 1) yt_player.setPlaybackRate(1);
     console.log('onP f_ts:', fixed_end_time_ts, 'f:', fixed_end_time, 'ce:', cur_end_time, 'yt:', yt_player.getCurrentTime());
-    if (!is_replay && 
-        (fixed_end_time_ts === null || 
-          (yt_player.getCurrentTime() > ((fixed_end_time - fixed_end_time_ts) + Date.now() / 1000))
-        )
-      ) {
+    if (!is_replay &&
+      (fixed_end_time_ts === null ||
+        (yt_player.getCurrentTime() > ((fixed_end_time - fixed_end_time_ts) + Date.now() / 1000))
+      )
+    ) {
       save_fix_end_time();
     }
   }
@@ -132,14 +144,14 @@ function onPlayerStateChange(event) {
 
 function save_fix_end_time() {
   if (fixed_last_try_ts === null || Date.now() - fixed_last_try_ts > 3000) {
-    console.log('good try',fixed_last_try_ts,fixed_last_try_ts - Date.now());
+    console.log('good try', fixed_last_try_ts, fixed_last_try_ts - Date.now());
     fixed_last_try_ts = Date.now();
     fixed_end_time_ts = Date.now() / 1000;
     fixed_end_time = yt_player.getCurrentTime();
     cur_end_time = fixed_end_time;
     console.log('fix', fixed_end_time);
   } else {
-    console.log('false try',fixed_last_try_ts,fixed_last_try_ts - Date.now());
+    console.log('false try', fixed_last_try_ts, fixed_last_try_ts - Date.now());
     fixed_last_try_ts = Date.now();
   }
 }
