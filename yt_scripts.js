@@ -2,6 +2,7 @@
 //    after the API code downloads.
 var yt_player;
 function onYouTubeIframeAPIReady() {
+  console.log('ytReady');
   let videoId = util_get_query_param('yt');
 
   if (videoId === '') {
@@ -25,6 +26,8 @@ function onYouTubeIframeAPIReady() {
       'onStateChange': onPlayerStateChange
     }
   });
+
+  console.log('ytInited', yt_player);
 }
 
 // 4. The API will call this function when the video player is ready.
