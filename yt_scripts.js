@@ -77,9 +77,9 @@ function changeDelay(mod) {
 }
 
 function onPlayerReady(event) {
-  yt_player.setVolume(10);
+  yt_player.setVolume(1);
   yt_player.playVideo();
-  console.log('GOgoGo');
+  console.log('GoVol',yt_player.getVolume());
 
   onlineTimerId = setInterval(function () {
     /*
