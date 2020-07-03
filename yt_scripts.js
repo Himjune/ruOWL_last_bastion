@@ -7,12 +7,48 @@ if (videoId === '') {
   //videoId = get_current_yt_ow_channel();
 }
 
+const playlist = [
+  {
+    link: 'Xz7fnyN-7fw',
+    date: Date.UTC(2020, 6, 3, 18, 30, 0)
+  },
+  {
+    link: 'LkJgdJG_i8M',
+    date: Date.UTC(2020, 6, 4, 7, 30, 0)
+  },
+  {
+    link: 'JbLMRpS66YU',
+    date: Date.UTC(2020, 6, 4, 18, 0, 0)
+  },
+  {
+    link: 'OTDHDrhBP1w',
+    date: Date.UTC(2020, 6, 5, 7, 30, 0)
+  },
+  {
+    link: 'oh92uvQ7DZI',
+    date: Date.UTC(2020, 6, 5, 18, 0, 0)
+  }
+]
+
 if (videoId === '') {
   //https://www.youtube.com/watch?v=Xz7fnyN-7fw
   //videoId = '33ENT8wlROM'; // my test
   //videoId = '5Tw5xhRsonc'; // news stream
   videoId = 'Xz7fnyN-7fw'; // next owl
   //videoId = 'oEfQawTuAbw' // owl highlights
+}
+
+if (videoId === 'timer') 
+{
+  let cur = Date.now()
+  let idx = 0;
+  while (cur > playlist[idx].date) {
+    idx++;
+  }
+  idx = idx-1;
+
+  videoId = playlist[idx].link;
+  console.log('YtFound:', cur, idx, playlist[idx].date, playlist[idx].link);
 }
 
 function startYt() {
