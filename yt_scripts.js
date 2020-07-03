@@ -42,7 +42,7 @@ if (videoId === 'timer')
 {
   let cur = Date.now()
   let idx = 0;
-  while (cur > playlist[idx].date) {
+  while (idx < playlist.length && cur > playlist[idx].date) {
     idx++;
   }
   idx = idx-1;
