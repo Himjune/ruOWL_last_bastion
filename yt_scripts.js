@@ -8,9 +8,10 @@ if (videoId === '') {
 }
 
 if (videoId === '') {
+  //https://www.youtube.com/watch?v=Xz7fnyN-7fw
   //videoId = '33ENT8wlROM'; // my test
   //videoId = '5Tw5xhRsonc'; // news stream
-  videoId = 'ow6S7tKysfA'; // next owl
+  videoId = 'Xz7fnyN-7fw'; // next owl
   //videoId = 'oEfQawTuAbw' // owl highlights
 }
 
