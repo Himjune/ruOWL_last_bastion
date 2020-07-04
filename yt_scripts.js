@@ -14,7 +14,7 @@ const playlist = [
   },
   {
     link: 'LkJgdJG_i8M',
-    date: Date.UTC(2020, 6, 4, 7, 30, 0)
+    date: Date.UTC(2020, 6, 4, 1, 30, 0)
   },
   {
     link: 'JbLMRpS66YU',
@@ -34,12 +34,9 @@ if (videoId === '') {
   //https://www.youtube.com/watch?v=Xz7fnyN-7fw
   //videoId = '33ENT8wlROM'; // my test
   //videoId = '5Tw5xhRsonc'; // news stream
-  videoId = 'Xz7fnyN-7fw'; // next owl
+  //videoId = 'Xz7fnyN-7fw'; // next owl
   //videoId = 'oEfQawTuAbw' // owl highlights
-}
 
-if (videoId === 'timer') 
-{
   let cur = Date.now()
   let idx = 0;
   while (idx < playlist.length && cur > playlist[idx].date) {
