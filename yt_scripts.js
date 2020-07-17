@@ -41,8 +41,11 @@ if (videoId === '') {
     idx++;
   }
   idx = idx-1;
+  if (idx < 0) idx = 0;
+  
 
-  console.log('YtFound:', cur, idx, playlist[idx].date, playlist[idx].link);
+  console.log('YtFound:', playlist, cur, idx);
+  console.log('YtFound:', playlist[idx].date, playlist[idx].link);
   videoId = playlist[idx].link;
 }
 
