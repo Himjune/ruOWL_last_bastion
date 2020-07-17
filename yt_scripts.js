@@ -42,8 +42,8 @@ if (videoId === '') {
   }
   idx = idx-1;
 
-  videoId = playlist[idx].link;
   console.log('YtFound:', cur, idx, playlist[idx].date, playlist[idx].link);
+  videoId = playlist[idx].link;
 }
 
 function startYt() {
