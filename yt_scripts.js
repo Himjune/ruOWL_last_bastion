@@ -7,26 +7,24 @@ if (videoId === '') {
   //videoId = get_current_yt_ow_channel();
 }
 
+// Date(Date.UTC(96, 1, 2, 3, 4, 5));
+// expected output: Fri, 02 Feb 1996 03:04:05 GMT
 const playlist = [
   {
-    link: 'Xz7fnyN-7fw',
-    date: Date.UTC(2020, 6, 3, 18, 30, 0)
+    link: '-h6BqIsQoe0',
+    date: Date.UTC(2020, 6, 17, 17, 30, 0)
   },
   {
-    link: 'LkJgdJG_i8M',
-    date: Date.UTC(2020, 6, 4, 1, 30, 0)
+    link: '8owCoPisAKE',
+    date: Date.UTC(2020, 6, 18, 7, 0, 0)
   },
   {
-    link: 'JbLMRpS66YU',
-    date: Date.UTC(2020, 6, 4, 18, 0, 0)
+    link: 'DJudt5mEFeg',
+    date: Date.UTC(2020, 6, 18, 17, 30, 0)
   },
   {
-    link: 'OTDHDrhBP1w',
-    date: Date.UTC(2020, 6, 5, 7, 30, 0)
-  },
-  {
-    link: 'oh92uvQ7DZI',
-    date: Date.UTC(2020, 6, 5, 18, 0, 0)
+    link: 'hIL61v7RJvU',
+    date: Date.UTC(2020, 6, 19, 17, 30, 0)
   }
 ]
 
