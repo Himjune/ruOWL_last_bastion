@@ -9,22 +9,38 @@ if (videoId === '') {
 
 // Date(Date.UTC(96, 1, 2, 3, 4, 5));
 // expected output: Fri, 02 Feb 1996 03:04:05 GMT
-const playlist = [
+/*
   {
-    link: '-h6BqIsQoe0',
-    date: Date.UTC(2020, 6, 17, 17, 30, 0)
+    link: 'Lc7h18JRrDs',
+    date: Date.UTC(2020, mounth, fday, 17, 30, 0)
   },
   {
     link: '8owCoPisAKE',
-    date: Date.UTC(2020, 6, 18, 7, 0, 0)
+    date: Date.UTC(2020, mounth, fday+1, 7, 0, 0)
+  },
+*/
+const mounth = 7-1;
+const fday = 24;
+const playlist = [
+  {
+    link: 'Lc7h18JRrDs',
+    date: Date.UTC(2020, mounth, fday, 17, 30, 0)
   },
   {
-    link: 'DJudt5mEFeg',
-    date: Date.UTC(2020, 6, 18, 17, 30, 0)
+    link: 'chkRtOFTt0c',
+    date: Date.UTC(2020, mounth, fday+1, 7, 0, 0)
   },
   {
-    link: 'hIL61v7RJvU',
-    date: Date.UTC(2020, 6, 19, 17, 30, 0)
+    link: '6-XV9_RoThA',
+    date: Date.UTC(2020, mounth, fday+1, 17, 30, 0)
+  },
+  {
+    link: 'o3SF5uCClT0',
+    date: Date.UTC(2020, mounth, fday+2, 7, 0, 0)
+  },
+  {
+    link: 'aJbPogzePzs',
+    date: Date.UTC(2020, mounth, fday+2, 17, 30, 0)
   }
 ]
 
