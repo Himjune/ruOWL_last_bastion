@@ -19,27 +19,23 @@ if (videoId === '') {
     date: Date.UTC(2020, mounth, fday+1, 7, 0, 0)
   },
 */
-const mounth = 7-1;
-const fday = 24;
+const mounth = 8-1;
+const fday = 0;
 const playlist = [
   {
-    link: 'Lc7h18JRrDs',
-    date: Date.UTC(2020, mounth, fday, 17, 30, 0)
+    link: 'p4HsqwW3Bl8',
+    date: Date.UTC(2020, 7, 31, 17, 30, 0)
   },
   {
-    link: 'chkRtOFTt0c',
+    link: 'J9Vn_lCrIsA',
     date: Date.UTC(2020, mounth, fday+1, 7, 0, 0)
   },
   {
-    link: '6-XV9_RoThA',
+    link: 'xRyGFwpagWg',
     date: Date.UTC(2020, mounth, fday+1, 17, 30, 0)
   },
   {
-    link: 'o3SF5uCClT0',
-    date: Date.UTC(2020, mounth, fday+2, 7, 0, 0)
-  },
-  {
-    link: 'aJbPogzePzs',
+    link: 'OFnIAVqKZbM',
     date: Date.UTC(2020, mounth, fday+2, 17, 30, 0)
   }
 ]
