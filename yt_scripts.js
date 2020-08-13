@@ -20,27 +20,38 @@ if (videoId === '') {
   },
 */
 const mounth = 8-1;
-const fday = 7;
+const fday = 14;
+const mor = 7, eve = 17;
 const playlist = [
   {
-    link: 'NsMjV4-yuE4',
-    date: Date.UTC(2020, mounth, fday, 17, 30, 0)
+    used: true,
+    link: 'Z9hsP7aPWW4',
+    date: Date.UTC(2020, mounth, fday, mor, 0, 0)
   },
   {
-    link: '0VhlS3z3eiQ',
-    date: Date.UTC(2020, mounth, fday+1, 7, 0, 0)
+    used: true,
+    link: 'B2viLYzyCus',
+    date: Date.UTC(2020, mounth, fday, eve, 0, 0)
   },
   {
-    link: 't_3REIRsDjg',
-    date: Date.UTC(2020, mounth, fday+1, 17, 30, 0)
+    used: true,
+    link: 'HGD1_-yGlpU',
+    date: Date.UTC(2020, mounth, fday+1, mor, 0, 0)
   },
   {
-    link: 'D4A-UO3bwIE',
-    date: Date.UTC(2020, mounth, fday+2, 17, 30, 0)
+    used: true,
+    link: 'LN7tVZVYKy8',
+    date: Date.UTC(2020, mounth, fday+1, eve, 0, 0)
   },
   {
-    link: 'tcfG8Yu6K5E',
-    date: Date.UTC(2020, mounth, fday+2, 17, 30, 0)
+    used: true,
+    link: 'WiZDCYNJg6k',
+    date: Date.UTC(2020, mounth, fday+2, mor, 0, 0)
+  },
+  {
+    used: true,
+    link: 'kobNbPXYro0',
+    date: Date.UTC(2020, mounth, fday+2, eve, 0, 0)
   },
 ]
 
@@ -53,16 +64,19 @@ if (videoId === '') {
 
   let cur = Date.now()
   let idx = 0;
-  while (idx < playlist.length && cur > playlist[idx].date) {
+
+  let actPL = playlist.filter((val) => {
+    return (val.used);
+  })
+
+  while (idx < actPL.length && cur > actPL[idx].date) {
     idx++;
   }
+
   idx = idx-1;
   if (idx < 0) idx = 0;
   
-
-  console.log('YtFound:', playlist, cur, idx);
-  console.log('YtFound:', playlist[idx].date, playlist[idx].link);
-  videoId = playlist[idx].link;
+  videoId = actPL[idx].link;
 }
 
 function startYt() {
